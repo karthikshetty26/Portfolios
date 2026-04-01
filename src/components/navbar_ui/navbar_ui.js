@@ -36,6 +36,7 @@ export default function NavbarUi() {
     const [showMenu, setShowMenu] = useState(isRootPath);
     const resfOne = useRef(null);
     const resftwo = useRef(null);
+    const triggerRef = useRef(null); // tracks the button that opened the menu for focus restore
 
     // Handle theme toggle
     const toggleTheme = () => {
@@ -83,6 +84,41 @@ export default function NavbarUi() {
         return () => mediaQuery.removeEventListener('change', handleChange);
     }, []);
 
+    // Focus trap + ESC handler
+    useEffect(() => {
+        if (!isMenuOpen) {
+            // Restore focus to the element that triggered the menu
+            triggerRef.current?.focus();
+            return;
+        }
+
+        // Move focus to first focusable element in the panel
+        const panel = resfOne.current;
+        const focusableSelectors = 'a[href], button, [tabindex]:not([tabindex="-1"])';
+        const focusableEls = panel ? Array.from(panel.querySelectorAll(focusableSelectors)) : [];
+        focusableEls[0]?.focus();
+
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                setIsMenuOpen(false);
+                return;
+            }
+            if (e.key !== 'Tab' || focusableEls.length === 0) return;
+
+            const first = focusableEls[0];
+            const last = focusableEls[focusableEls.length - 1];
+
+            if (e.shiftKey) {
+                if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+            } else {
+                if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [isMenuOpen]);
+
     // Detect clicks outside menu
     useEffect(() => {
         // Function to handle clicks outside the menu
@@ -129,27 +165,48 @@ export default function NavbarUi() {
 
                 {/* Menu button - only show on root path */}
                 {showMenu && (
-                    <div className={navCSS.menu_div} onClick={toggleMenu}>
+                    <button
+                        ref={triggerRef}
+                        className={navCSS.menu_div}
+                        onClick={toggleMenu}
+                        aria-expanded={isMenuOpen}
+                        aria-controls="side-nav-panel"
+                        aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                    >
                         {isMenuOpen ? 'Close' : 'Menu'}
-                    </div>
+                    </button>
                 )}
             </main>
 
             {/* Side nav */}
-            <nav className={`${navCSS.side_nav} ${isMenuOpen ? navCSS.show : ''}`}>
-                {/* Side nav main section */}
-                <main className={`${navCSS.hold_nav} ${isMenuOpen ? navCSS.show : ''}`} ref={resfOne}>
+            <nav
+                className={`${navCSS.side_nav} ${isMenuOpen ? navCSS.show : ''}`}
+                aria-hidden={!isMenuOpen}
+            >
+                {/* Side nav panel */}
+                <div
+                    id="side-nav-panel"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="Navigation menu"
+                    className={`${navCSS.hold_nav} ${isMenuOpen ? navCSS.show : ''}`}
+                    ref={resfOne}
+                >
                     {/* Link listing */}
                     <ul className={navCSS.show_menu_values}>
                         {MENU_ITEMS.map((item) => (
                             <li key={item.href}>
-                                <a href={`#${item.href}`} onClick={handleSmoothScroll}>
+                                <a
+                                    href={`#${item.href}`}
+                                    onClick={handleSmoothScroll}
+                                    tabIndex={isMenuOpen ? 0 : -1}
+                                >
                                     <ArrowTopRight /> {item.name}
                                 </a>
                             </li>
                         ))}
                     </ul>
-                </main>
+                </div>
             </nav>
         </>
     );

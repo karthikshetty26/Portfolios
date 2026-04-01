@@ -71,6 +71,10 @@
     color: var(--foreground-05);
     letter-spacing: 2px;
     font-size: 14px;
+    /* Reset <button> browser defaults */
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 /* Side Navigation Styles */
