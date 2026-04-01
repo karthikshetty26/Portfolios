@@ -3,6 +3,8 @@ import { useEffect, useState, memo, useRef } from 'react';
 import { usePathname } from "next/navigation";
 // CSS
 import navCSS from './navbar.module.css';
+// Config
+import { MENU_ITEMS } from '@/config/site';
 
 // Memoized ArrowTopRight component to reuse icon
 const ArrowTopRight = memo(() => (
@@ -11,16 +13,6 @@ const ArrowTopRight = memo(() => (
     </svg>
 ));
 ArrowTopRight.displayName = 'ArrowTopRight';
-
-// Navigation items list
-const MENU_ITEMS = [
-    { name: 'HOME', href: 'home' },
-    { name: 'ABOUT', href: 'about' },
-    { name: (<>MY&nbsp;STACK</>), href: 'stack' },
-    { name: 'PROJECTS', href: 'projects' },
-    { name: 'BLOGS', href: 'blogs' },
-    { name: 'CONTACT', href: 'contact' }
-];
 
 export default function NavbarUi() {
     const pathname = usePathname();
