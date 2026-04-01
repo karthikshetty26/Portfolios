@@ -26,7 +26,13 @@ export default function NavbarUi() {
     const pathname = usePathname();
     const isRootPath = pathname === '/';
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [theme, setTheme] = useState('dark');
+    // Lazy initializer reads the data-theme set by the pre-hydration script — avoids flash and hydration mismatch
+    const [theme, setTheme] = useState(() => {
+        if (typeof document !== 'undefined') {
+            return document.documentElement.getAttribute('data-theme') || 'dark';
+        }
+        return 'dark'; // SSR fallback (will be overridden by script on client)
+    });
     const [showMenu, setShowMenu] = useState(isRootPath);
     const resfOne = useRef(null);
     const resftwo = useRef(null);
@@ -63,18 +69,8 @@ export default function NavbarUi() {
         }
     }, [pathname, isMenuOpen]);
 
-    // Initialize theme from local storage or system preference
+    // Listen for system theme changes (only applies when no user preference is saved)
     useEffect(() => {
-        // Get theme from storage or system preference
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-
-        // Apply theme
-        setTheme(initialTheme);
-        document.documentElement.setAttribute('data-theme', initialTheme);
-
-        // Add listener for system theme changes
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         const handleChange = (e) => {
             if (!localStorage.getItem('theme')) {
@@ -83,10 +79,7 @@ export default function NavbarUi() {
                 document.documentElement.setAttribute('data-theme', newTheme);
             }
         };
-
-        // Add event listener for system theme changes
         mediaQuery.addEventListener('change', handleChange);
-        // Cleanup event listener on component unmount
         return () => mediaQuery.removeEventListener('change', handleChange);
     }, []);
 
@@ -95,7 +88,7 @@ export default function NavbarUi() {
         // Function to handle clicks outside the menu
         const handleClickOutside = (e) => {
             const target = e.target;
-        
+
             // Check if the click is outside the menu and exclude the menu button click
             if (
                 resfOne.current &&
@@ -107,7 +100,7 @@ export default function NavbarUi() {
                 setIsMenuOpen(false);
             }
         };
-        
+
         // Add event listener to check for clicks outside the menu
         document.addEventListener("click", handleClickOutside, true);
         return () => {
@@ -121,7 +114,7 @@ export default function NavbarUi() {
             <main className={navCSS.float_nav} ref={resftwo}>
                 {/* Theme toggle */}
                 <div className={`${navCSS.theme_div} ${isMenuOpen ? navCSS.only_menu : ''}`} onClick={toggleTheme}>
-                {theme === 'light' ? 'Dark' : 'Light'}
+                    {theme === 'light' ? 'Dark' : 'Light'}
                     <button className={navCSS.dark_light_btn}>
                         <span>
                             {theme === 'light' ? (
@@ -137,7 +130,7 @@ export default function NavbarUi() {
                 {/* Menu button - only show on root path */}
                 {showMenu && (
                     <div className={navCSS.menu_div} onClick={toggleMenu}>
-                        {isMenuOpen ? 'Close': 'Menu'}
+                        {isMenuOpen ? 'Close' : 'Menu'}
                     </div>
                 )}
             </main>
