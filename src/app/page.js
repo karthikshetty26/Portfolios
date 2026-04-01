@@ -149,8 +149,7 @@ export default function Home() {
   ];
 
   // GSAP animations
-  const projectRefs = useRef(null);
-  projectRefs.current = [];
+  const projectRefs = useRef([]);
 
   // GSAP animation for project elements
   useEffect(() => {
@@ -301,7 +300,9 @@ export default function Home() {
           {/* Map through projects array to render each project */}
           {projects.map((project, i) => (
             <Link key={project.id} href={project.page_link} className={HOMECSS.project_container} ref={(el) => {
-              if (el) projectRefs.current[i] = el;
+              if (el && !projectRefs.current.includes(el)) {
+                projectRefs.current.push(el);
+              }
             }}>
               <div className={HOMECSS.project_container_hr}></div>
               <div className={HOMECSS.project_container_content}>
