@@ -18,6 +18,10 @@
     letter-spacing: 2px;
     font-size: 14px;
     transition: all 450ms ease-in-out;
+    /* Reset <button> browser defaults */
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .theme_div.only_menu {

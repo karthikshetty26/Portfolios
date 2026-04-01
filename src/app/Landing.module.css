@@ -869,12 +869,19 @@
     color: var(--background-dark-text);
 }
 
-.social_ul li.li_gmail a span.gmail:nth-child(1) {
+.social_ul li.li_gmail button.gmail {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.social_ul li.li_gmail button.gmail span.gmail:nth-child(1) {
     color: var(--background-dark-text);
     opacity: 0.2;
 }
 
-.social_ul li.li_gmail a span.gmail:nth-child(2) {
+.social_ul li.li_gmail button.gmail span.gmail:nth-child(2) {
     padding-left: 10px;
     color: var(--background-dark-text);
     opacity: 0.6;

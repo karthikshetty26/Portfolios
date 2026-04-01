@@ -388,9 +388,14 @@ export default function Home() {
               ))}
 
               <li className={HOMECSS.li_gmail}>
-                <a className={HOMECSS.gmail} title='Click to Copy Email ID' onClick={copyToClipboard}>
+                <button
+                  className={HOMECSS.gmail}
+                  title='Click to Copy Email ID'
+                  onClick={copyToClipboard}
+                  type="button"
+                >
                   <span className={HOMECSS.gmail}>or mail to</span> <span className={HOMECSS.gmail}> karthikkanyana26@gmail.com</span>
-                </a>
+                </button>
               </li>
             </ul>
 
