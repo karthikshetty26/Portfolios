@@ -89,6 +89,15 @@ export default function RootLayout({ children }) {
         {/* Pre-hydration theme script: runs synchronously before paint to prevent flash */}
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();` }} />
 
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-9J1RVTSWHQ" />
+        <Script id='google-analytics' strategy='afterInteractive'>{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-9J1RVTSWHQ');
+        `}</Script>
+        <meta name="google-site-verification" content="cCP8Kw8vPOGAi55eKNzp5ob1QtdHelpWTMyJPSkRCgU" />
       </head>
       <body className={`${poppins.variable} ${roboto.variable}`}>
         <NavbarUi />
