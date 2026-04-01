@@ -87,8 +87,7 @@ export default function NavbarUi() {
     // Focus trap + ESC handler
     useEffect(() => {
         if (!isMenuOpen) {
-            // Restore focus to the element that triggered the menu
-            triggerRef.current?.focus();
+            // Do not restore focus to the element that triggered the menu
             return;
         }
 
@@ -96,7 +95,7 @@ export default function NavbarUi() {
         const panel = resfOne.current;
         const focusableSelectors = 'a[href], button, [tabindex]:not([tabindex="-1"])';
         const focusableEls = panel ? Array.from(panel.querySelectorAll(focusableSelectors)) : [];
-        focusableEls[0]?.focus();
+
 
         const handleKeyDown = (e) => {
             if (e.key === 'Escape') {
