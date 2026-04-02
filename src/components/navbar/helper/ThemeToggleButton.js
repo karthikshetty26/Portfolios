@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
-import navCSS from './navbar.module.css';
+import navCSS from '../navbar.module.css';
 
 /**
  * ThemeToggleButton - Interactive component for theme switching

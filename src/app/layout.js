@@ -1,6 +1,6 @@
 import Script from "next/script";
 // Components
-import NavbarUi from '@/components/navbar_ui/navbar_ui'
+import NavbarUi from '@/components/navbar/navbar'
 // Config
 import { ANALYTICS_ID, SEO_METADATA, GOOGLE_SITE_VERIFICATION } from '@/config/site';
 // CSS

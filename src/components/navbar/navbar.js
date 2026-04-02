@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import { usePathname } from "next/navigation";
 // Components
-import ThemeToggleButton from './ThemeToggleButton';
-import MenuPanel from './MenuPanel';
+import ThemeToggleButton from './helper/ThemeToggleButton';
+import MenuPanel from './helper/MenuPanel';
 // CSS
 import navCSS from './navbar.module.css';
 
