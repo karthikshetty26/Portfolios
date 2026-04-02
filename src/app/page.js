@@ -1,9 +1,9 @@
-"use client"
-import { memo, useState } from 'react';
+import { memo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 // Components
 import TechItem from '@/components/tech-item/tech-item'
+import CopyEmailButton from '@/components/CopyEmailButton';
 // Config
 import { SOCIAL_LINKS, TECH_STACK, PROJECTS, BLOGS, UI_TEXT, EXTERNAL_LINKS, PROFILE } from '@/config/site';
 // CSS
@@ -20,20 +20,6 @@ export default function Home() {
     </svg>
   ));
   HomeIcons.displayName = 'HomeIcons';
-
-  const toastMessage = UI_TEXT.TOAST_COPY_EMAIL;
-  const [copySuccess, setCopySuccess] = useState(false);
-
-  // Function to copy the current page email to the clipboard
-  function copyToClipboard() {
-    navigator.clipboard
-      .writeText(PROFILE.email)
-      .then(() => {
-        setCopySuccess(true);
-        setTimeout(() => setCopySuccess(false), 4000); // runs after 4 sec
-      })
-      .catch((err) => console.error(UI_TEXT.EMAIL_COPY_ERROR, err)); // Error handling
-  }
 
   return (
     <main className={HOMECSS.container_main}>
@@ -229,20 +215,9 @@ export default function Home() {
               ))}
 
               <li className={HOMECSS.li_gmail}>
-                <button
-                  className={HOMECSS.gmail}
-                  title={UI_TEXT.COPY_EMAIL_BUTTON_TITLE}
-                  onClick={copyToClipboard}
-                  type="button"
-                >
-                  <span className={HOMECSS.gmail}>{UI_TEXT.CONTACT_EMAIL_BUTTON_TEXT}</span> <span className={HOMECSS.gmail}> {PROFILE.email}</span>
-                </button>
+                <CopyEmailButton />
               </li>
             </ul>
-
-            <div className={`${HOMECSS.toast_div} ${copySuccess ? HOMECSS.show : ''}`}>
-              <div className={HOMECSS.toast_messages}>{toastMessage}</div>
-            </div>
 
           </div>
 
