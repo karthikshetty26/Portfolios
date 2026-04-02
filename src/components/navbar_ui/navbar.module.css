@@ -1,9 +1,9 @@
 /* NAVBAR COMPONENT STYLES */
 .float_nav {
     position: fixed;
-    right: 30px;
-    top: 41px;
-    padding-bottom: 10px;
+    right: var(--space-2xl);
+    top: var(--space-2xl);
+    /* padding-bottom: var(--space-sm); */
     z-index: 999;
     display: flex;
     align-items: center;
@@ -13,11 +13,11 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-family: var(--font-family-secondary);
+    font-family: var(--font-display);
     color: var(--foreground-05);
-    letter-spacing: 2px;
-    font-size: 14px;
-    transition: all 450ms ease-in-out;
+    letter-spacing: 0.125rem;
+    font-size: var(--font-sm);
+    transition: all var(--transition-normal);
     /* Reset <button> browser defaults */
     background: none;
     border: none;
@@ -33,11 +33,11 @@
 .dark_light_btn {
     width: 15px;
     height: 15px;
-    margin-left: 5px;
-    margin-right: 15px;
+    margin-left: var(--space-sm);
+    margin-right: var(--space-lg);
     border: none;
     background-color: transparent;
-    transition: all 0.7s ease;
+    transition: all var(--transition-slow);
     cursor: pointer;
     opacity: 0.8;
 }
@@ -71,10 +71,10 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-family: var(--font-family-secondary);
+    font-family: var(--font-display);
     color: var(--foreground-05);
-    letter-spacing: 2px;
-    font-size: 14px;
+    letter-spacing: 0.125rem;
+    font-size: var(--font-sm);
     /* Reset <button> browser defaults */
     background: none;
     border: none;
@@ -92,7 +92,7 @@
     width: 100%;
     height: 100dvh;
     background-color: rgba(0, 0, 0, 0);
-    transition: all 450ms ease-in-out;
+    transition: all var(--transition-normal);
     /* Prevent interaction when hidden */
     pointer-events: none;
 }
@@ -113,7 +113,7 @@
     width: min(80%, 500px);
     height: 100vh;
     background-color: var(--background);
-    transition: all 650ms ease-in-out;
+    transition: all 0.65s ease-in-out;
     /* Add overflow handling for small screens */
     overflow-y: auto;
 }
@@ -141,14 +141,13 @@
     transform-origin: bottom;
     font-size: 3rem;
     list-style: none;
-    font-weight: 800;
+    font-weight: var(--font-weight-extrabold);
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px;
-    transition: all 950ms ease-in-out;
+    gap: var(--space-md);
+    transition: all 0.95s ease-in-out;
     margin: 0.5rem 0;
-    /* Add consistent spacing between items */
 }
 
 /* Animation for list items when menu is shown */
@@ -158,11 +157,11 @@
 
 /* Arrow icon visibility */
 .show_menu_values li svg {
-    margin-right: 10px;
+    margin-right: var(--space-md);
     opacity: 0;
     visibility: hidden;
     color: var(--foreground);
-    transition: opacity 350ms ease-in-out, visibility 550ms ease-in-out, color 250ms ease-in-out;
+    transition: opacity var(--transition-normal), visibility 0.55s ease-in-out, color var(--transition-fast);
 }
 
 /* Hover effects for navigation items */
@@ -185,7 +184,7 @@
     color: inherit;
     width: 100%;
     line-height: 0;
-    padding: 1rem 0;
+    padding: var(--space-base) 0;
 }
 
 /* Responsive adjustments */
@@ -194,7 +193,7 @@
 
     /* Adjust nav position */
     .float_nav {
-        right: 20px;
+        right: var(--space-xl);
     }
 }
 
@@ -203,7 +202,7 @@
 
     /* Adjust nav position */
     .float_nav {
-        top: 38px;
+        top: var(--space-lg);
     }
 
     /* Hover color effect for hamburger bars */

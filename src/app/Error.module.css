@@ -5,9 +5,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--background);
+    overflow: hidden;
+    position: relative;
+}
+
+.bg_404 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--font-2hero);
+    font-weight: var(--font-weight-black);
+    color: var(--foreground);
+    opacity: 0.04;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
 }
 
 .main .error_section {
+    position: relative;
+    z-index: 1;
     width: 100%;
     display: flex;
     align-items: center;
@@ -16,24 +35,34 @@
 }
 
 .main .error_section .error_h1 {
-    margin-bottom: 10px;
-    font-size: 10rem;
-    line-height: 7rem;
-    letter-spacing: 6px;
+    margin-bottom: var(--space-md);
+    font-size: var(--font-2xl);
+    line-height: 1.1;
+    letter-spacing: 0.125rem;
     color: var(--brand-primary);
+    font-family: var(--font-display);
+    font-weight: var(--font-weight-extrabold);
 }
 
 .main .error_section .error_p {
-    margin-bottom: 10px;
+    margin-bottom: var(--space-md);
     text-align: center;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+    font-size: var(--font-lg);
+    letter-spacing: 0.0625rem;
     color: var(--foreground);
+    font-family: var(--font-body);
+    line-height: 1.5;
 }
 
 .main .error_section .error_a {
-    font-size: 0.9rem;
+    font-size: var(--font-sm);
     text-decoration: underline;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
     color: var(--brand-primary);
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+}
+
+.main .error_section .error_a:hover {
+    opacity: 0.7;
 }

@@ -2,9 +2,9 @@
 .tech_item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--space-sm);
     cursor: context-menu;
-    transition: transform 0.2s ease;
+    transition: transform var(--transition-fast);
 }
 
 /* Hover Effect */
@@ -18,7 +18,7 @@
     width: 20px;
     height: 20px;
     object-fit: contain;
-    transition: all 450ms ease-in-out;
+    transition: all var(--transition-normal);
 }
 
 .tech_item:hover .tech_logo {
@@ -27,10 +27,10 @@
 
 /* Item name span */
 .tech_item span {
-    font-size: 0.9rem;
+    font-size: var(--font-sm);
     color: var(--foreground);
     opacity: 0.5;
-    transition: all 250ms ease-in-out;
+    transition: all var(--transition-normal);
 }
 
 .tech_item:hover span {
@@ -50,6 +50,6 @@
     }
 
     .tech_item span {
-        font-size: 0.8rem;
+        font-size: var(--font-xs);
     }
 }

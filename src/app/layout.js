@@ -7,21 +7,21 @@ import { ANALYTICS_ID, SEO_METADATA, GOOGLE_SITE_VERIFICATION } from '@/config/s
 import "./globals.css";
 import "./projects/projects.css"
 // Google Fonts
-import { Poppins, Roboto } from 'next/font/google'
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 
 // Google Fonts | Font Optimization
-// Font primary
-const poppins = Poppins({
+// Display font — headings, names, key display text
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: '--font-family-primary'
+  weight: ["400", "500", "600", "700", "800"],
+  variable: '--font-display'
 })
 
-// Font secondary
-const roboto = Roboto({
+// Body font — paragraphs, labels, descriptions
+const interSans = Inter({
   subsets: ['latin'],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: '--font-family-secondary'
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: '--font-body'
 })
 
 // Global metadata
@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
         `}</Script>
         <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
       </head>
-      <body className={`${poppins.variable} ${roboto.variable}`}>
+      <body className={`${plusJakarta.variable} ${interSans.variable}`}>
         <NavbarUi />
         {children}
       </body>
