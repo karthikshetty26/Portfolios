@@ -1,8 +1,6 @@
 "use client"
 import Image from "next/image"; // Next.js Image component for optimized image loading
 import { useRouter } from 'next/navigation';
-// Smooth page scroll
-import { ReactLenis } from 'lenis/react'
 
 export default function Project({ projectData }) {
     // Back Button
@@ -13,8 +11,7 @@ export default function Project({ projectData }) {
     };
 
     return (
-        <ReactLenis root>
-            <main className="project_page_main">
+        <main className="project_page_main">
                 {/* Back button for navigation */}
                 <div className="project_back_div">
                     <button
@@ -164,6 +161,5 @@ export default function Project({ projectData }) {
                     </div>
                 )}
             </main>
-        </ReactLenis>
-    );
-}
+        );
+    }

@@ -37,7 +37,7 @@
     margin-right: var(--space-lg);
     border: none;
     background-color: transparent;
-    transition: all var(--transition-slow);
+    transition: rotate var(--transition-normal);
     cursor: pointer;
     opacity: 0.8;
 }
@@ -113,7 +113,7 @@
     width: min(80%, 500px);
     height: 100vh;
     background-color: var(--background);
-    transition: all 0.65s ease-in-out;
+    transition: transform var(--transition-normal);
     /* Add overflow handling for small screens */
     overflow-y: auto;
 }
@@ -146,7 +146,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    transition: all 0.95s ease-in-out;
+    transition: transform var(--transition-normal);
     margin: 0.5rem 0;
 }
 
@@ -161,7 +161,7 @@
     opacity: 0;
     visibility: hidden;
     color: var(--foreground);
-    transition: opacity var(--transition-normal), visibility 0.55s ease-in-out, color var(--transition-fast);
+    transition: opacity var(--transition-normal), visibility var(--transition-normal), color var(--transition-fast);
 }
 
 /* Hover effects for navigation items */

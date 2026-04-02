@@ -532,7 +532,7 @@
     color: var(--brand-primary);
     line-height: 0;
     opacity: 0;
-    transition: all 0.75s ease-in-out;
+    transition: right var(--transition-slow), opacity var(--transition-slow);
     display: flex;
     align-items: center;
 }
@@ -545,7 +545,7 @@
     margin-right: 0;
     border-radius: 50%;
     background-color: var(--foreground-05);
-    transition: all 1.05s ease-in-out;
+    transition: width var(--transition-slow), height var(--transition-slow), margin-right var(--transition-slow);
 }
 
 .project_container_content p.no::after {
@@ -556,7 +556,7 @@
     height: 5px;
     padding-left: 0;
     opacity: 0;
-    transition: all 1.05s ease-in-out;
+    transition: width var(--transition-slow), height var(--transition-slow), padding-left var(--transition-slow), opacity var(--transition-slow);
 }
 
 /* Hover effect for project ID */
@@ -589,7 +589,7 @@
     font-size: var(--font-sm);
     margin-bottom: var(--space-sm);
     color: var(--foreground-05);
-    transition: all 0.55s ease-in-out;
+    transition: color var(--transition-normal);
 }
 
 /* Project name styling */
@@ -598,7 +598,7 @@
     margin-bottom: var(--space-md);
     line-height: 2rem;
     color: var(--foreground-05);
-    transition: all 0.55s ease-in-out;
+    transition: color var(--transition-normal);
 }
 
 .project_container_content span h2 span {

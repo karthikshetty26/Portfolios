@@ -1,5 +1,5 @@
 "use client"
-import { memo, useRef, useEffect, useState } from 'react';
+import { memo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 // Components
@@ -8,13 +8,6 @@ import TechItem from '@/components/tech-item/tech-item'
 import { SOCIAL_LINKS, TECH_STACK, PROJECTS, BLOGS, UI_TEXT, EXTERNAL_LINKS, PROFILE } from '@/config/site';
 // CSS
 import HOMECSS from './Landing.module.css';
-// Smooth page scroll
-import { ReactLenis } from 'lenis/react'
-// GSAP
-import gsap from 'gsap/gsap-core';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
 
@@ -27,34 +20,6 @@ export default function Home() {
     </svg>
   ));
   HomeIcons.displayName = 'HomeIcons';
-
-  // GSAP animations
-  const projectRefs = useRef([]);
-
-  // GSAP animation for project elements
-  useEffect(() => {
-    projectRefs.current.forEach((el) => {
-      const anim = gsap.fromTo(
-        el,
-        { y: 100, opacity: 0.4 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.1,
-          ease: 'power4.inOut',
-          paused: true,
-        }
-      );
-
-      // Create a ScrollTrigger instance for each project element
-      ScrollTrigger.create({
-        trigger: el,
-        start: 'top 80%',
-        onEnter: () => anim.play(),           // Scroll down — play animation
-        onLeaveBack: () => anim.reverse(),    // Scroll back up — reverse animation
-      });
-    });
-  }, []);
 
   const toastMessage = UI_TEXT.TOAST_COPY_EMAIL;
   const [copySuccess, setCopySuccess] = useState(false);
@@ -71,8 +36,7 @@ export default function Home() {
   }
 
   return (
-    <ReactLenis root>
-      <main className={HOMECSS.container_main}>
+    <main className={HOMECSS.container_main}>
         {/* Hero section with introduction */}
         <section className={HOMECSS.hero_section} id='home'>
           <h1>
@@ -179,11 +143,7 @@ export default function Home() {
 
           {/* Map through projects array to render each project */}
           {PROJECTS.map((project, i) => (
-            <Link key={project.id} href={project.page_link} className={HOMECSS.project_container} ref={(el) => {
-              if (el && !projectRefs.current.includes(el)) {
-                projectRefs.current.push(el);
-              }
-            }}>
+            <Link key={project.id} href={project.page_link} className={HOMECSS.project_container}>
               <div className={HOMECSS.project_container_hr}></div>
               <div className={HOMECSS.project_container_content}>
                 <p className={HOMECSS.no}><i>more on project</i></p>
@@ -289,6 +249,5 @@ export default function Home() {
           <div className={HOMECSS.contact_cc}>©&nbsp;{PROFILE.yearFounded}&nbsp;{PROFILE.firstName} {PROFILE.lastName}</div>
         </section>
       </main>
-    </ReactLenis>
-  );
-}
+    );
+  }
