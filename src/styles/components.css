@@ -157,6 +157,8 @@
 
 /* --- Cards --- */
 .card {
+  display: flex;
+  flex-direction: column;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   background-color: var(--color-surface);
@@ -179,6 +181,7 @@
 
 /* --- Tags --- */
 .tag {
+  width: fit-content;
   display: inline-block;
   padding: 0.125rem var(--space-sm);
   border-radius: var(--radius-sm);

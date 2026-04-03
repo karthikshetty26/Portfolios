@@ -70,6 +70,7 @@
 .grid {
   display: grid;
   gap: var(--space-2xl);
+  align-items: stretch;
 }
 
 .grid--2 {

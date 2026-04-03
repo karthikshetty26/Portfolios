@@ -20,8 +20,8 @@ export function ServicesPreview() {
           {services.map((service) => (
             <Card key={service.title}>
               <h3 className="heading-card">{service.title}</h3>
-              <p className="body-sm mt-sm" style={{ flex: 1 }}>{service.description}</p>
-              <p className="body-sm mt-lg border-top" style={{ paddingTop: "var(--space-base)", fontSize: "var(--font-xs)" }}>
+              <p className="body-sm mt-sm">{service.description}</p>
+              <p className="body-sm mt-lg border-top" style={{ paddingTop: "var(--space-base)", fontSize: "var(--font-xs)", marginTop: "auto" }}>
                 <strong className="label">Best for:</strong> {service.bestFor}
               </p>
             </Card>
