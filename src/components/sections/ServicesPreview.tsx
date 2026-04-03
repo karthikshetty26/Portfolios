@@ -13,7 +13,9 @@ export function ServicesPreview() {
             <p className="eyebrow">What I offer</p>
             <h2 className="heading-section">Services</h2>
           </div>
-          <Link href="/services" className="body-sm hide-mobile">See full details →</Link>
+          <Link href="/services" className="body-sm hide-mobile">
+            See full details →
+          </Link>
         </div>
 
         <div className="grid grid--3">
@@ -21,7 +23,7 @@ export function ServicesPreview() {
             <Card key={service.title}>
               <h3 className="heading-card">{service.title}</h3>
               <p className="body-sm mt-sm">{service.description}</p>
-              <p className="body-sm mt-lg border-top" style={{ paddingTop: "var(--space-base)", fontSize: "var(--font-xs)", marginTop: "auto" }}>
+              <p className="body-sm service-footer">
                 <strong className="label">Best for:</strong> {service.bestFor}
               </p>
             </Card>

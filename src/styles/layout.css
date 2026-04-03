@@ -67,12 +67,17 @@
 }
 
 /* --- Grid --- */
+/* Stretch ensures all grid items have equal height, preventing layout misalignment */
 .grid {
+  /* Layout */
   display: grid;
+  align-items: stretch; /* Critical: forces equal height for all grid items */
+  
+  /* Spacing */
   gap: var(--space-2xl);
-  align-items: stretch;
 }
 
+/* Responsive column layouts */
 .grid--2 {
   grid-template-columns: 1fr;
 }
@@ -98,6 +103,7 @@
 }
 
 /* --- Flex utilities --- */
+/* Common flexbox patterns for quick layout composition */
 .flex-between {
   display: flex;
   align-items: flex-end;

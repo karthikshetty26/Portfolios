@@ -97,23 +97,31 @@
 
 /* --- Buttons --- */
 .btn {
+  /* Layout */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
+  
+  /* Typography */
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  text-decoration: none;
+  
+  /* Visual styling */
   border: none;
   border-radius: var(--radius-md);
-  font-weight: var(--font-weight-semibold);
+  
+  /* Interaction */
   cursor: pointer;
   transition: opacity var(--transition-fast), background-color var(--transition-fast);
-  text-decoration: none;
-  white-space: nowrap;
 }
 
 .btn:hover {
   opacity: 0.8;
 }
 
+/* Button variants */
 .btn--primary {
   background-color: var(--foreground);
   color: var(--background);
@@ -125,12 +133,14 @@
   border: 1px solid var(--color-border);
 }
 
+/* Ghost buttons need custom hover to override default opacity */
 .btn--ghost:hover {
   border-color: var(--foreground);
   background-color: var(--overlay);
   opacity: 1;
 }
 
+/* Button sizes */
 .btn--sm {
   padding: var(--space-sm) var(--space-base);
   font-size: var(--font-sm);
@@ -150,30 +160,42 @@
   width: 100%;
 }
 
+/* Disabled state prevents interaction and reduces visual prominence */
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
 /* --- Cards --- */
+/* Flexbox column ensures children stack vertically and can use margin-top: auto for bottom anchoring */
 .card {
+  /* Layout: vertical stacking with full height */
   display: flex;
   flex-direction: column;
+  
+  /* Spacing */
+  padding: var(--space-2xl);
+  
+  /* Visual styling */
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   background-color: var(--color-surface);
-  padding: var(--space-2xl);
+  
+  /* Interaction */
   transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
+/* Elevation on hover provides visual feedback for interactive cards */
 .card--hover:hover {
   box-shadow: 0 4px 24px var(--color-shadow-md);
 }
 
+/* Border highlight indicates the card is clickable */
 .card--link:hover {
   border-color: var(--foreground);
 }
 
+/* Accent background for featured or highlighted content */
 .card--highlight {
   background-color: var(--green-bg);
   border-color: var(--color-border);
@@ -181,12 +203,19 @@
 
 /* --- Tags --- */
 .tag {
-  width: fit-content;
+  /* Layout */
   display: inline-block;
+  width: fit-content;
+  
+  /* Spacing */
   padding: 0.125rem var(--space-sm);
-  border-radius: var(--radius-sm);
+  
+  /* Typography */
   font-size: var(--font-xs);
   font-weight: var(--font-weight-medium);
+  
+  /* Visual styling */
+  border-radius: var(--radius-sm);
   background-color: var(--overlay);
   color: var(--foreground-muted);
 }
@@ -197,6 +226,7 @@
   padding: var(--space-xs) var(--space-md);
 }
 
+/* Featured tags use accent colors to draw attention */
 .tag--featured {
   background-color: var(--green-bg);
   color: var(--green-primary);
@@ -212,17 +242,24 @@
 }
 
 /* --- Navbar --- */
+/* Fixed positioning keeps nav visible during scroll */
 .nav-header {
+  /* Layout */
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 50;
+  
+  /* Visual styling */
   background-color: var(--background);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   border-bottom: 1px solid transparent;
+  
+  /* Interaction */
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
+/* Scrolled state adds visual separation from content */
 .nav-header--scrolled {
   border-bottom-color: var(--color-border);
   box-shadow: 0 1px 12px var(--color-shadow-sm);
@@ -243,6 +280,7 @@
   color: var(--foreground);
 }
 
+/* Desktop navigation - hidden on mobile */
 .nav-links {
   display: none;
   align-items: center;
@@ -256,11 +294,18 @@
 }
 
 .nav-link {
+  /* Spacing */
   padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-md);
+  
+  /* Typography */
   font-size: var(--font-sm);
   font-weight: var(--font-weight-medium);
   color: var(--foreground-muted);
+  
+  /* Visual styling */
+  border-radius: var(--radius-md);
+  
+  /* Interaction */
   transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
@@ -268,6 +313,7 @@
   color: var(--foreground);
 }
 
+/* Active state shows current page */
 .nav-link--active {
   color: var(--foreground);
   background-color: var(--overlay);
@@ -280,15 +326,20 @@
 }
 
 .nav-theme-toggle {
+  /* Layout */
   display: flex;
   align-items: center;
   justify-content: center;
   width: 2.25rem;
   height: 2.25rem;
+  
+  /* Visual styling */
   border: none;
   border-radius: var(--radius-md);
   background: transparent;
   color: var(--foreground-muted);
+  
+  /* Interaction */
   cursor: pointer;
   transition: background-color var(--transition-fast);
 }
@@ -297,15 +348,25 @@
   background-color: var(--overlay);
 }
 
+/* CTA button - hidden on mobile to save space */
 .nav-cta {
+  /* Layout */
   display: none;
   align-items: center;
+  
+  /* Spacing */
   padding: var(--space-sm) var(--space-base);
+  
+  /* Typography */
   font-size: var(--font-sm);
   font-weight: var(--font-weight-semibold);
+  
+  /* Visual styling */
   border-radius: var(--radius-md);
   background-color: var(--foreground);
   color: var(--background);
+  
+  /* Interaction */
   transition: opacity var(--transition-fast);
 }
 
@@ -734,17 +795,41 @@
   color: var(--foreground-muted);
 }
 
+/* Anchors to bottom of card using margin-top: auto */
 .service-best-for {
+  /* Spacing */
+  margin-top: auto; /* Critical: pushes element to bottom of flex container */
+  padding: var(--space-md);
+  padding-top: var(--space-base);
+  
+  /* Typography */
+  font-size: var(--font-xs);
+  
+  /* Visual styling */
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   background-color: var(--overlay);
-  padding: var(--space-md);
+}
+
+/* Simplified version for service preview cards - anchors to bottom without background */
+.service-footer {
+  /* Spacing */
+  margin-top: auto; /* Critical: pushes element to bottom of flex container */
+  padding-top: var(--space-base);
+  
+  /* Typography */
+  font-size: var(--font-xs);
+  
+  /* Visual styling */
+  border-top: 1px solid var(--color-border);
 }
 
 /* --- Line clamp --- */
+/* Truncates text to specified number of lines with ellipsis */
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -752,6 +837,7 @@
 .line-clamp-1 {
   display: -webkit-box;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
