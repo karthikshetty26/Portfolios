@@ -77,6 +77,9 @@
   --radius-full: 9999px;
 }
 
+/* ============================ 
+DARK THEME OVERRIDES
+============================ */
 [data-theme="dark"] {
   /* ===== BASE COLORS ===== */
   --background:    #000000;
@@ -99,8 +102,8 @@
   --color-shadow-lg: rgba(0, 0, 0, 0.40);
   --color-shadow-xl: rgba(0, 0, 0, 0.40);
 
-  /* ===== SURFACES ===== */
-  --color-glass-bg:        rgba(15, 15, 15, 0.70);
+  /* ===== GLASS & SURFACES ===== */
+  --color-glass-bg:         rgba(15, 15, 15, 0.70);
   --color-surface-elevated: #1a1a1a;
 }
 
@@ -139,7 +142,7 @@ a {
     opacity var(--theme-transition);
 }
 
-/* ===== SCROLLBAR ===== */
+/* ===== CUSTOM SCROLLBAR (WebKit) ===== */
 ::-webkit-scrollbar {
   width: 4px;
 }
@@ -157,17 +160,9 @@ a {
   background: var(--foreground);
 }
 
+/* ===== Preferred mode: Dark ===== */
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
-
-/* ===== UTILITY CLASSES ===== */
-.page_container {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 var(--space-lg);
-  margin: auto;
 }
