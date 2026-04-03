@@ -18,42 +18,56 @@ import { profile } from "@/config/profile";
  * calculateYearsOfExperience("2023-02-01") → 2.17
  */
 export function calculateYearsOfExperience(startDate: string): number {
-  const start = new Date(startDate);
-  const now = new Date();
-  const diffMs = now.getTime() - start.getTime();
-  const diffYears = diffMs / (1000 * 60 * 60 * 24 * 365.25);
-  return Math.round(diffYears * 100) / 100; // Round to 2 decimal places
+    const start = new Date(startDate);
+    const now = new Date();
+    const diffMs = now.getTime() - start.getTime();
+    // 365.25 accounts for leap years
+    const diffYears = diffMs / (1000 * 60 * 60 * 24 * 365.25);
+    // Round to 2 decimal places (for internal accuracy)
+    return Math.round(diffYears * 100) / 100;
 }
 
-/**
- * Format years of experience for display
- * Shows "X+" format where X is the rounded-down year
+/** 
+ * Format experience for display 
+ * 
+ * Rules: 
+ * - Always show at least "1+" (avoid "0+") 
+ * - Round DOWN to avoid overclaiming
  * 
  * @example
  * formatExperience(2.17) → "2+"
  * formatExperience(3.5) → "3+"
- * formatExperience(0.8) → "0+"
+ * formatExperience(0.8) → "1+"
  */
 export function formatExperience(years: number): string {
-  const roundedDown = Math.floor(years);
-  return `${roundedDown}+`;
+    if (years < 1) return "1+";
+
+    const roundedDown = Math.floor(years);
+    return `${roundedDown}+`;
 }
 
-/**
- * Format hours worked into human-readable format
- * Converts to thousands (k) for values >= 1000
+/** 
+ * Format hours worked into readable format 
  * 
- * @example
- * formatHours(4600) → "4.6k+"
- * formatHours(500) → "500+"
- * formatHours(10000) → "10k+"
+ * Rules: 
+ * - Convert 1000+ → "k" format 
+ * - Avoid ugly values like "10.0k" 
+ * 
+ * @example 
+ * 4600 → "4.6k+" 
+ * 10000 → "10k+" 
+ * 500 → "500+" 
  */
 export function formatHours(hours: number): string {
-  if (hours >= 1000) {
-    const thousands = (hours / 1000).toFixed(1);
-    return `${thousands}k+`;
-  }
-  return `${hours}+`;
+    if (hours >= 1000) {
+        const thousands = hours / 1000;
+
+        const formatted = thousands % 1 === 0
+            ? thousands.toFixed(0) // 10 → "10" 
+            : thousands.toFixed(1); // 4.6 → "4.6" 
+        return `${formatted}k+`;
+    }
+    return `${hours}+`;
 }
 
 /**
@@ -64,8 +78,8 @@ export function formatHours(hours: number): string {
  * totalProjects() → 25 (8 + 5 + 12)
  */
 export function totalProjects(): number {
-  const { projects } = profile.work;
-  return projects.professional + projects.freelance + projects.personal;
+    const { projects } = profile.work;
+    return projects.professional + projects.freelance + projects.personal;
 }
 
 /**
@@ -83,13 +97,13 @@ export function totalProjects(): number {
  * // }
  */
 export function getProfileStats() {
-  const yearsOfExp = calculateYearsOfExperience(profile.career.startDate);
+    const yearsOfExp = calculateYearsOfExperience(profile.career.startDate);
 
-  return {
-    experience: formatExperience(yearsOfExp),
-    hoursWorked: formatHours(profile.work.totalHours),
-    projectsBuilt: `${totalProjects()}+`,
-  };
+    return {
+        experience: formatExperience(yearsOfExp),
+        hoursWorked: formatHours(profile.work.totalHours),
+        projectsBuilt: `${totalProjects()}+`,
+    };
 }
 
 /**
@@ -97,10 +111,10 @@ export function getProfileStats() {
  * Generally, prefer getProfileStats() for UI usage
  */
 export function getRawProfileData() {
-  return {
-    yearsOfExperience: calculateYearsOfExperience(profile.career.startDate),
-    totalHours: profile.work.totalHours,
-    totalProjects: totalProjects(),
-    projectBreakdown: profile.work.projects,
-  };
+    return {
+        yearsOfExperience: calculateYearsOfExperience(profile.career.startDate),
+        totalHours: profile.work.totalHours,
+        totalProjects: totalProjects(),
+        projectBreakdown: profile.work.projects,
+    };
 }
