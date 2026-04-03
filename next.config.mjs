@@ -23,41 +23,28 @@ const CONTENT_SECURITY_POLICY = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable the "X-Powered-By: Next.js" header for security
   poweredByHeader: false,
 
-  // Define security headers for all routes
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: "/(.*)",
         headers: [
           {
-            key: 'Content-Security-Policy',
-            // Keep CSP strict while explicitly allowing approved analytics providers.
-            // Add new providers to the ANALYTICS_*_SOURCES arrays above.
-            value: CONTENT_SECURITY_POLICY
+            key: "Content-Security-Policy",
+            value: CONTENT_SECURITY_POLICY,
+          },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains; preload",
           },
           {
-            key: 'X-Frame-Options',
-            value: 'DENY'
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
           },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin'
-          },
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=31536000; includeSubDomains; preload'
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()'
-          }
         ],
       },
     ];
