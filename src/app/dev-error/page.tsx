@@ -6,22 +6,34 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
+type Item = {
+  title: string;
+  key: string;
+  desc: string;
+  status: "YES" | "NO" | "MAYBE";
+  action: () => void;
+  label: string;
+};
+
 export default function DevErrorPage() {
   const [fetchError, setFetchError] = useState<string | null>(null);
   const [triggerRenderError, setTriggerRenderError] = useState(false);
 
+  // Render error
   if (triggerRenderError) {
     throw new Error("Render Error: This error is thrown during component render");
   }
 
+  const triggerRender = () => setTriggerRenderError(true);
+
   const handleEventError = () => {
-    throw new Error("Event Handler Error: This error is thrown in an onClick handler");
+    throw new Error("Event Handler Error");
   };
 
   const handleAsyncError = async () => {
     try {
       await new Promise((_, reject) =>
-        setTimeout(() => reject(new Error("Async Error: Simulated async failure")), 500)
+        setTimeout(() => reject(new Error("Async Error")), 500)
       );
     } catch (error) {
       console.error(error);
@@ -29,72 +41,74 @@ export default function DevErrorPage() {
     }
   };
 
-  const handleUncaughtAsyncError = async () => {
-    await new Promise((_, reject) =>
-      setTimeout(() => reject(new Error("Uncaught Async Error")), 500)
-    );
+  // ✅ Actually escapes React
+  const handleUncaughtAsyncError = () => {
+    setTimeout(() => {
+      throw new Error("Uncaught Async Error (outside React)");
+    }, 0);
   };
 
   const handleFetchError = async () => {
     try {
       setFetchError(null);
-      const res = await fetch("https://invalid-api-endpoint-12345.com/data");
-      if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+      await fetch("https://invalid-api-endpoint-12345.com/data");
+      throw new Error("Forced fetch failure");
     } catch (error) {
       setFetchError((error as Error).message);
     }
   };
 
+  // ✅ Truly uncaught
   const handleUncaughtFetchError = async () => {
-    const res = await fetch("https://invalid-api-endpoint-12345.com/data");
-    await res.json();
+    await fetch("https://invalid-api-endpoint-12345.com/data");
+    throw new Error("Uncaught fetch failure");
   };
 
-  const items = [
+  const items: Item[] = [
     {
       title: "Render Error",
       key: "render",
       desc: "Throws during render. Caught by error.tsx.",
       status: "YES",
-      action: () => setTriggerRenderError(true),
+      action: triggerRender,
       label: "Trigger",
     },
     {
       title: "Event Handler Error",
-      key: "event-handler",
-      desc: "Thrown inside onClick. Not caught by error.tsx.",
+      key: "event",
+      desc: "Thrown in onClick. Not caught by error.tsx.",
       status: "NO",
       action: handleEventError,
       label: "Trigger",
     },
     {
       title: "Caught Async Error",
-      key: "caught-async",
-      desc: "Handled with try/catch. Won’t hit error.tsx.",
+      key: "async-caught",
+      desc: "Handled with try/catch.",
       status: "NO",
       action: handleAsyncError,
       label: "Trigger",
     },
     {
       title: "Uncaught Async Error",
-      key: "uncaught-async",
-      desc: "Unhandled promise. Might be caught depending on React.",
-      status: "MAYBE",
+      key: "async-uncaught",
+      desc: "Escapes React boundary.",
+      status: "NO",
       action: handleUncaughtAsyncError,
       label: "Trigger",
     },
     {
       title: "Fetch Error (Caught)",
       key: "fetch-caught",
-      desc: "Handled fetch failure. Shows inline error.",
+      desc: "Handled fetch failure.",
       status: "NO",
       action: handleFetchError,
       label: "Trigger",
     },
     {
       title: "Uncaught Fetch Error",
-      key: "uncaught-fetch",
-      desc: "Unhandled fetch → console error.",
+      key: "fetch-uncaught",
+      desc: "Unhandled fetch error.",
       status: "NO",
       action: handleUncaughtFetchError,
       label: "Trigger",
@@ -109,7 +123,7 @@ export default function DevErrorPage() {
             <p className="eyebrow">Dev</p>
             <h1 className="heading-page">Error Playground</h1>
             <p className="body-text mt-base">
-              Controlled scenarios to test how error boundaries behave in real conditions.
+              Test how different errors behave with error boundaries.
             </p>
           </div>
         </Container>
@@ -119,7 +133,7 @@ export default function DevErrorPage() {
         <Container>
           <div className="grid grid--2">
             {items.map((item) => (
-              <Card key={item.title}>
+              <Card key={item.key}>
                 <p className="body-sm text-muted mb-sm">
                   Caught by error.tsx: <strong>{item.status}</strong>
                 </p>
@@ -142,7 +156,6 @@ export default function DevErrorPage() {
             ))}
           </div>
 
-          {/* Summary Card */}
           <div className="mt-3xl">
             <Card>
               <h3 className="heading-sm mb-md">What error.tsx Actually Catches</h3>
