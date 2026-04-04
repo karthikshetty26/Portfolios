@@ -5,9 +5,9 @@ export function ProofStrip() {
   const stats = getProfileStats();
 
   const STATS = [
-    { value: stats.experience, label: "Years of Experience" },
+    { value: stats.experience, label: "Years Experience"},
     { value: stats.hoursWorked, label: "Hours Worked" },
-    { value: stats.projectsBuilt, label: "Production Apps Built" },
+    { value: stats.projectsBuilt, label: "Applications Shipped" },
   ];
 
   return (

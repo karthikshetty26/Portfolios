@@ -95,6 +95,15 @@
   color: var(--foreground);
 }
 
+/* --- Links inside text --- */
+.text-link {
+  font-weight: 600;
+}
+
+.text-link:hover {
+  opacity: 0.8;
+}
+
 /* --- Buttons --- */
 .btn {
   /* Layout */
@@ -102,16 +111,16 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  
+
   /* Typography */
   font-weight: var(--font-weight-semibold);
   white-space: nowrap;
   text-decoration: none;
-  
+
   /* Visual styling */
   border: none;
   border-radius: var(--radius-md);
-  
+
   /* Interaction */
   cursor: pointer;
   transition: opacity var(--transition-fast), background-color var(--transition-fast);
@@ -121,10 +130,19 @@
   opacity: 0.8;
 }
 
+.btn--text-left {
+  justify-content: flex-start;
+}
+
 /* Button variants */
 .btn--primary {
   background-color: var(--foreground);
   color: var(--background);
+}
+
+.btn--transparent {
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 .btn--ghost {
@@ -172,15 +190,15 @@
   /* Layout: vertical stacking with full height */
   display: flex;
   flex-direction: column;
-  
+
   /* Spacing */
   padding: var(--space-2xl);
-  
+
   /* Visual styling */
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   background-color: var(--color-surface);
-  
+
   /* Interaction */
   transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
@@ -206,14 +224,14 @@
   /* Layout */
   display: inline-block;
   width: fit-content;
-  
+
   /* Spacing */
   padding: 0.125rem var(--space-sm);
-  
+
   /* Typography */
   font-size: var(--font-xs);
   font-weight: var(--font-weight-medium);
-  
+
   /* Visual styling */
   border-radius: var(--radius-sm);
   background-color: var(--overlay);
@@ -250,11 +268,11 @@
   left: 0;
   right: 0;
   z-index: 50;
-  
+
   /* Visual styling */
   background-color: var(--background);
   border-bottom: 1px solid transparent;
-  
+
   /* Interaction */
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
@@ -296,15 +314,15 @@
 .nav-link {
   /* Spacing */
   padding: var(--space-sm) var(--space-md);
-  
+
   /* Typography */
   font-size: var(--font-sm);
   font-weight: var(--font-weight-medium);
   color: var(--foreground-muted);
-  
+
   /* Visual styling */
   border-radius: var(--radius-md);
-  
+
   /* Interaction */
   transition: color var(--transition-fast), background-color var(--transition-fast);
 }
@@ -332,13 +350,13 @@
   justify-content: center;
   width: 2.25rem;
   height: 2.25rem;
-  
+
   /* Visual styling */
   border: none;
   border-radius: var(--radius-md);
   background: transparent;
   color: var(--foreground-muted);
-  
+
   /* Interaction */
   cursor: pointer;
   transition: background-color var(--transition-fast);
@@ -353,19 +371,19 @@
   /* Layout */
   display: none;
   align-items: center;
-  
+
   /* Spacing */
   padding: var(--space-sm) var(--space-base);
-  
+
   /* Typography */
   font-size: var(--font-sm);
   font-weight: var(--font-weight-semibold);
-  
+
   /* Visual styling */
   border-radius: var(--radius-md);
   background-color: var(--foreground);
   color: var(--background);
-  
+
   /* Interaction */
   transition: opacity var(--transition-fast);
 }
@@ -798,13 +816,14 @@
 /* Anchors to bottom of card using margin-top: auto */
 .service-best-for {
   /* Spacing */
-  margin-top: auto; /* Critical: pushes element to bottom of flex container */
+  margin-top: auto;
+  /* Critical: pushes element to bottom of flex container */
   padding: var(--space-md);
   padding-top: var(--space-base);
-  
+
   /* Typography */
   font-size: var(--font-xs);
-  
+
   /* Visual styling */
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
@@ -814,12 +833,13 @@
 /* Simplified version for service preview cards - anchors to bottom without background */
 .service-footer {
   /* Spacing */
-  margin-top: auto; /* Critical: pushes element to bottom of flex container */
+  margin-top: auto;
+  /* Critical: pushes element to bottom of flex container */
   padding-top: var(--space-base);
-  
+
   /* Typography */
   font-size: var(--font-xs);
-  
+
   /* Visual styling */
   border-top: 1px solid var(--color-border);
 }

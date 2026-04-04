@@ -9,15 +9,10 @@ export function Intro() {
           <p className="eyebrow">Who I am</p>
           <h2 className="heading-section">Developer by day, builder by night.</h2>
           <p className="body-text mt-base">
-            I&apos;m a full-stack developer with a full-time engineering role and a
-            freelance practice running alongside it. I work primarily with
-            Angular, React, Next.js, and Java Spring Boot — building
-            production-grade apps that are fast, maintainable, and built to last.
+            I&apos;m a full-stack developer with a full-time engineering role and a freelance practice running alongside it. Most of my work is around Angular, React, Next.js, and Java Spring Boot. building apps that are fast, stable, and easy to maintain.
           </p>
           <p className="body-text mt-md">
-            Outside of client work, I write technical articles and create
-            content for developers who are learning and growing — because
-            sharing what I know is as important to me as the work itself.
+             Outside of that, I spend time writing and sharing what I learn. It helps me think better, and hopefully helps others who are figuring things out along the way.
           </p>
         </div>
       </Container>

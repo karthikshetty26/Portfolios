@@ -14,7 +14,7 @@ export const profile = {
   career: {
     // ISO date format: YYYY-MM-DD
     // Used to calculate dynamic years of experience
-    startDate: "2023-02-01",
+    startDate: "2023-02-06",
   },
 
   /**
@@ -22,16 +22,16 @@ export const profile = {
    */
   work: {
     // Total hours spent working across all projects
-    totalHours: 4600,
+    totalHours: 7000,
 
     /**
      * Project counts by category
      * Keep these updated as you complete new projects
      */
     projects: {
-      professional: 8,
-      freelance: 5,
-      personal: 12,
+      professional: 6,
+      freelance: 0,
+      personal: 2,
     },
   },
 };

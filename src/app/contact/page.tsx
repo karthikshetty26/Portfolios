@@ -7,11 +7,9 @@ export const metadata: Metadata = {
   description: "Get in touch with Karthik Shetty — for freelance web development projects, collaborations, or just to say hello.",
 };
 
-const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/karthikshetty26/", desc: "Connect professionally" },
-  { label: "GitHub", href: "https://github.com/karthikshetty26", desc: "View my open source work" },
+const SOCIAL_LINKS = [  
   { label: "Twitter / X", href: "https://x.com/KarthikShettyyy", desc: "Follow my dev journey" },
-  { label: "Hashnode", href: "https://karthikshetty.hashnode.dev/", desc: "Read my technical articles" },
+  { label: "GitHub", href: "https://github.com/karthikshetty26", desc: "View my open source work" },
 ];
 
 export default function ContactPage() {
@@ -23,8 +21,7 @@ export default function ContactPage() {
             <p className="eyebrow">Get in touch</p>
             <h1 className="heading-page">Let&apos;s talk.</h1>
             <p className="body-text mt-base">
-              Have a project in mind, a question, or just want to connect? The
-              best way to reach me is by email — I respond to every message.
+              Have a project in mind, a question, or just want to connect? The best way to reach me is on LinkedIn. I’m fairly active there and usually respond quickly.
             </p>
           </div>
         </Container>
@@ -33,19 +30,8 @@ export default function ContactPage() {
       <Section variant="content">
         <Container>
           <div className="contact-grid">
-            {/* Left: email + socials */}
+            {/* Left: socials */}
             <div>
-              <div className="mb-2xl">
-                <p className="eyebrow">Email</p>
-                <a
-                  href="mailto:karthikkanyana26@gmail.com"
-                  className="heading-card"
-                  style={{ transition: "opacity var(--transition-fast)" }}
-                >
-                  karthikkanyana26@gmail.com
-                </a>
-              </div>
-
               <div>
                 <p className="eyebrow">Elsewhere</p>
                 <ul role="list" style={{ display: "flex", flexDirection: "column", gap: "var(--space-md)" }}>
@@ -64,48 +50,33 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right: contact form */}
-            <div>
-              <p className="eyebrow">Send a message</p>
-              <form
-                action="mailto:karthikkanyana26@gmail.com"
-                method="get"
-                encType="text/plain"
-                aria-label="Contact form"
-              >
-                <div className="form-group">
-                  <label htmlFor="name" className="form-label">Name</label>
-                  <input id="name" name="name" type="text" placeholder="Your name" required className="form-input" />
-                </div>
+            {/* Right: contact */}
+            <div id="contact-modern">
+              <p className="eyebrow">Start a conversation</p>
 
-                <div className="form-group">
-                  <label htmlFor="email" className="form-label">Email</label>
-                  <input id="email" name="email" type="email" placeholder="you@example.com" required className="form-input" />
-                </div>
+              <p className="body-text mt-base">
+                The easiest way to reach me is on LinkedIn. If you prefer email, that works too.
+              </p>
 
-                <div className="form-group">
-                  <label htmlFor="budget" className="form-label">
-                    Budget <span className="text-muted">(optional)</span>
-                  </label>
-                  <select id="budget" name="budget" className="form-input">
-                    <option value="">Select a range</option>
-                    <option value="&lt;500">Under $500</option>
-                    <option value="500-1500">$500 – $1,500</option>
-                    <option value="1500-5000">$1,500 – $5,000</option>
-                    <option value="5000+">$5,000+</option>
-                    <option value="not-sure">Not sure yet</option>
-                  </select>
-                </div>
+              <div style={{ marginTop: "var(--space-xl)", display: "flex", flexDirection: "column", gap: "var(--space-md)" }}>
 
-                <div className="form-group">
-                  <label htmlFor="message" className="form-label">Message</label>
-                  <textarea id="message" name="body" rows={5} placeholder="Tell me about your project..." required className="form-input form-textarea" />
-                </div>
+                <a
+                  href="https://www.linkedin.com/in/karthikshetty26/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--text-left btn--primary btn--lg"
+                >
+                  Message me on LinkedIn
+                </a>
 
-                <button type="submit" className="btn btn--primary btn--lg btn--full">
-                  Send Message
-                </button>
-              </form>
+                <a
+                  href="mailto:karthikkanyana26@gmail.com"
+                  className="btn btn--text-left btn--transparent btn--lg"
+                >
+                  Send an Email
+                </a>
+
+              </div>
             </div>
           </div>
         </Container>
