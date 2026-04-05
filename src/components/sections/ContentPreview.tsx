@@ -8,7 +8,7 @@ export function ContentPreview() {
       <Container>
         <div className="max-w-prose">
           <p className="eyebrow">Content</p>
-          <h2 className="heading-section">I write and create too.</h2>
+          <h2 className="heading-section">Lessons from <span className="text-green">building</span></h2>
           <p className="body-text mt-base">
             Most of what I write is just things I&apos;m learning or building, usually around code. I post longer write-ups on <a
               href="https://karthikshetty.hashnode.dev/"

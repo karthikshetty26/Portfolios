@@ -11,7 +11,7 @@ export function ServicesPreview() {
         <div className="flex-between mb-2xl">
           <div>
             <p className="eyebrow">What I offer</p>
-            <h2 className="heading-section">Services</h2>
+            <h2 className="heading-section">Services to <span className="text-green">build</span></h2>
           </div>
           <Link href="/services" className="body-sm hide-mobile">
             See full details →

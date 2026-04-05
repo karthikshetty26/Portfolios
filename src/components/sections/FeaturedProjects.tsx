@@ -13,7 +13,7 @@ export function FeaturedProjects() {
         <div className="flex-between mb-2xl">
           <div>
             <p className="eyebrow">Selected Work</p>
-            <h2 className="heading-section">Featured Projects</h2>
+            <h2 className="heading-section">A few things I&apos;ve <span className="text-green">built</span></h2>
           </div>
           <Link href="/projects" className="body-sm hide-mobile">View all →</Link>
         </div>

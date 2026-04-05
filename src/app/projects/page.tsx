@@ -16,8 +16,8 @@ export default function ProjectsPage() {
       <Section variant="page-header">
         <Container>
           <div className="max-w-prose">
-            <p className="eyebrow">Work</p>
-            <h1 className="heading-page">Project Log</h1>
+            <p className="eyebrow">Projects</p>
+            <h1 className="heading-page">A look at what I’ve <span className="text-green">built</span></h1>
             <p className="body-text mt-base">
               Things I&apos;ve built at work, on my own, and through open source. Mostly real-world stuff, and a few just because I wanted to.
             </p>

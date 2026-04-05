@@ -17,7 +17,7 @@ export function ContactCTA() {
             app, I&apos;m open to new projects and conversations.
           </p>
           <div className="flex-wrap mt-2xl" style={{ justifyContent: "center" }}>
-            <Button href="/contact" size="lg">Start a Conversation</Button>
+            <Button href="/contact" size="lg">Start a Conversation →</Button>
             <Button href="/projects" variant="ghost" size="lg">See My Work First</Button>
           </div>
         </div>

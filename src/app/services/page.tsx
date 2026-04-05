@@ -17,7 +17,7 @@ export default function ServicesPage() {
         <Container>
           <div className="max-w-prose">
             <p className="eyebrow">Freelance Services</p>
-            <h1 className="heading-page">What I can help you build</h1>
+            <h1 className="heading-page">What I can <span className="text-green">build</span> for you</h1>
             <p className="body-text mt-base">
               I take on freelance projects alongside my full-time work, helping build clean and reliable experiences. If you have something in mind, feel free to reach out. Most of the time, simple done right works better than something overly complex.
             </p>

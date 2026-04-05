@@ -10,8 +10,7 @@ export function Hero() {
           <p className="eyebrow">Full-Stack Developer · Freelancer · Content Creator</p>
 
           <h1 className="heading-hero">
-            I like building things that are simple, fast, and{" "}
-            <span className="text-green">actually convert.</span>
+            I like <span className="text-green">building</span> things that are simple, fast, and <span className="text-green">actually convert.</span>
           </h1>
 
           <p className="body-text mt-xl" style={{ maxWidth: "560px" }}>

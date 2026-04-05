@@ -17,7 +17,7 @@ export default function BlogsPage() {
         <Container>
           <div className="max-w-prose">
             <p className="eyebrow">Writing</p>
-            <h1 className="heading-page">Articles</h1>
+            <h1 className="heading-page">Notes on <span className="text-green">building</span></h1>
             <p className="body-text mt-base">
               I write to make sense of what I build, turning experience into simple, practical insights that are easy to apply in real projects.
             </p>

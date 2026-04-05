@@ -133,7 +133,7 @@
 }
 
 .btn:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .btn--text-left {
@@ -159,9 +159,8 @@
 
 /* Ghost buttons need custom hover to override default opacity */
 .btn--ghost:hover {
-  border-color: var(--foreground);
-  background-color: var(--overlay);
-  opacity: 1;
+  border-color: var(--foreground-muted);
+  color: var(--green-primary);
 }
 
 /* Button sizes */
@@ -817,7 +816,7 @@
   font-family: monospace;
   font-size: var(--font-xs);
   font-weight: var(--font-weight-bold);
-  color: var(--foreground-muted);
+  color: var(--green-primary);
 }
 
 /* Anchors to bottom of card using margin-top: auto */
@@ -874,7 +873,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-3xl);
-  max-width: 800px;
+  /* max-width: 900px; */
 }
 
 @media (min-width: 768px) {

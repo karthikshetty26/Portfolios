@@ -121,7 +121,7 @@ export default function DevErrorPage() {
         <Container>
           <div className="max-w-prose">
             <p className="eyebrow">Dev</p>
-            <h1 className="heading-page">Error Playground</h1>
+            <h1 className="heading-page">Error <span className="text-green">playground</span></h1>
             <p className="body-text mt-base">
               Test how different errors behave with error boundaries.
             </p>

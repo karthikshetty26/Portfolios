@@ -29,7 +29,7 @@ export default function AboutPage() {
         <Container>
           <div className="max-w-prose">
             <p className="eyebrow">About</p>
-            <h1 className="heading-page">A developer who ships.</h1>
+            <h1 className="heading-page">A developer who <span className="text-green">builds</span></h1>
             <p className="body-text mt-lg">
               I&apos;m Karthik Shetty, a full-stack developer based in India. I work a full-time engineering role building real-world applications, and I also take on freelance projects on the side.
             </p>
@@ -43,7 +43,7 @@ export default function AboutPage() {
       {/* What I do */}
       <Section variant="overlay" className="section--tight">
         <Container>
-          <h2 className="heading-section">What I do</h2>
+          <h2 className="heading-section">What I <span className="text-green">do</span></h2>
           <div className="grid grid--2 grid--gap-lg mt-lg">
             {[
               { title: "Full-Stack Development", desc: "I work across frontend and backend, building applications that are fast, reliable, and easy to maintain." },
@@ -64,7 +64,7 @@ export default function AboutPage() {
       <Section variant="tight">
         <Container>
           <div className="max-w-prose">
-            <h2 className="heading-section mb-xl">How I work</h2>
+            <h2 className="heading-section mb-xl">How I <span className="text-green">work</span></h2>
             <ul className="numbered-list" role="list">
               {HOW_I_WORK.map((item, i) => (
                 <li key={i} className="numbered-list-item">
@@ -83,7 +83,7 @@ export default function AboutPage() {
       <Section variant="overlay" className="section--tight">
         <Container>
           <div className="max-w-prose">
-            <h2 className="heading-section mb-lg">Background</h2>
+            <h2 className="heading-section mb-lg">Little <span className="text-green">background</span></h2>
             <p className="body-text">
               I&apos;ve been working as a full-time developer for around {stats.experience} years, building and shipping applications across different domains.
             </p>
@@ -101,7 +101,7 @@ export default function AboutPage() {
       <Section variant="tight">
         <Container>
           <div className="max-w-prose">
-            <h2 className="heading-section mb-md">I write about development too.</h2>
+            <h2 className="heading-section mb-md">I write about <span className="text-green">development</span> too</h2>
             <p className="body-text mb-xl">
               Mostly things I&apos;m learning or building, shared as articles, notes, and small breakdowns that might help someone else along the way.
             </p>
