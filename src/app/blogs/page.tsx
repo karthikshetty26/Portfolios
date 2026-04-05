@@ -19,8 +19,7 @@ export default function BlogsPage() {
             <p className="eyebrow">Writing</p>
             <h1 className="heading-page">Articles</h1>
             <p className="body-text mt-base">
-              Technical writing on topics I&apos;ve explored in practice — from
-              language fundamentals to tooling and workflow. Published on Hashnode and Medium.
+              I write to make sense of what I build, turning experience into simple, practical insights that are easy to apply in real projects.
             </p>
           </div>
         </Container>
@@ -28,8 +27,8 @@ export default function BlogsPage() {
 
       <Section variant="content">
         <Container>
-          <div className="max-w-prose">
-            <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-base)" }}>
+          <div>
+            <div className="grid grid--2">
               {blogs.map((blog) => (
                 <Card key={blog.slug}>
                   <time dateTime={blog.date} className="text-muted" style={{ fontSize: "var(--font-xs)", fontWeight: "var(--font-weight-medium)" }}>
