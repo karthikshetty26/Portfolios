@@ -90,6 +90,12 @@
   color: var(--foreground-muted);
 }
 
+.body-xs {
+  font-size: var(--font-xs);
+  line-height: 1.5;
+  color: var(--foreground-muted);
+}
+
 .label {
   font-size: var(--font-sm);
   font-weight: var(--font-weight-medium);
@@ -211,7 +217,7 @@
 
 /* Border highlight indicates the card is clickable */
 .card--link:hover {
-  border-color: var(--foreground);
+  border-color: var(--color-border-divider);
 }
 
 /* Accent background for featured or highlighted content */
@@ -234,7 +240,7 @@
   font-weight: var(--font-weight-medium);
 
   /* Visual styling */
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-xl);
   background-color: var(--overlay);
   color: var(--foreground-muted);
 }
@@ -880,4 +886,97 @@
   .contact-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* --- Project Card --- */
+/* Modern project card with improved spacing and visual hierarchy */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: var(--space-2xl);
+}
+
+/* Technology tags - above title with proper spacing */
+.project-card .tag-list {
+  margin-bottom: var(--space-lg);
+}
+
+/* Title styling - consistent across all project cards */
+.project-card .heading-card {
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-md);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.4;
+}
+
+/* Description text - maintain line clamp and proper color */
+.project-card .text-muted {
+  color: var(--foreground-muted);
+  line-height: 1.6;
+}
+
+/* Ensures description grows to fill space, pushing footer down */
+.project-card .flex-grow {
+  flex-grow: 1;
+}
+
+/* Footer section - outcome and CTA */
+.project-card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  /* padding-top: var(--space-base); */
+  /* border-top: 1px solid var(--color-border); */
+}
+
+/* Outcome text - green accent with small font */
+.project-card-footer .text-green {
+  font-weight: var(--font-weight-medium);
+  color: var(--green-primary);
+}
+
+/* CTA link text - subtle, links to case study */
+.text-cta {
+  display: inline-block;
+  font-size: var(--font-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--foreground-muted);
+  opacity: 0.6;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.project-card:hover .text-cta {
+  color: var(--foreground);
+  opacity: 0.8;
+}
+
+/* Utility class for small text */
+.text-xs {
+  font-size: var(--font-xs);
+}
+
+.text-sm {
+  font-size: var(--font-sm);
+}
+
+.text-base {
+  font-size: var(--font-base);
+}
+
+.text-md {
+  font-size: var(--font-md);
+}
+
+/* Spacing utility classes */
+.mb-sm {
+  margin-bottom: var(--space-sm);
+}
+
+.mb-base {
+  margin-bottom: var(--space-base);
+}
+
+.mb-lg {
+  margin-bottom: var(--space-lg);
 }
