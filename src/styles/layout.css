@@ -78,6 +78,10 @@
   gap: var(--space-2xl);
 }
 
+.grid--gap-lg {
+  gap: var(--space-lg);
+}
+
 /* Responsive column layouts */
 .grid--2 {
   grid-template-columns: 1fr;

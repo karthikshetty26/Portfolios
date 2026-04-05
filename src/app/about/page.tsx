@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const HOW_I_WORK = [
   "Start by figuring out what actually needs to be built, not everything needs a complex solution.",
-  "Keep things simple, most problems don’t need clever code, just clear thinking.",
+  "Keep things simple, because most problems don’t need clever code, just clear thinking.",
   "Clear communication early saves a lot of back-and-forth later.",
   "It’s easy to build something slow and bloated, avoiding that takes a bit more care.",
   "Build it, ship it, then improve it based on what actually matters.",
@@ -31,17 +31,10 @@ export default function AboutPage() {
             <p className="eyebrow">About</p>
             <h1 className="heading-page">A developer who ships.</h1>
             <p className="body-text mt-lg">
-              I&apos;m Karthik Shetty, a full-stack developer based in India. I
-              work a full-time engineering job building real-world applications,
-              and I take on freelance projects for businesses that want clean,
-              fast, conversion-focused websites and apps. Outside of client
-              work, I write and create content for developers learning the craft.
+              I&apos;m Karthik Shetty, a full-stack developer based in India. I work a full-time engineering role building real-world applications, and I also take on freelance projects on the side.
             </p>
             <p className="body-text mt-md">
-              I&apos;ve spent {stats.experience} years and {stats.hoursWorked} hours across production systems,
-              from HMS platforms and public banking portals to
-              AI-powered document tools. Every project has sharpened how I
-              think about architecture, user experience, and code quality.
+              Over the past {stats.experience} years, I&apos;ve worked across different systems, from internal tools to larger platforms, which has shaped how I think about performance, structure, and usability.
             </p>
           </div>
         </Container>
@@ -50,21 +43,19 @@ export default function AboutPage() {
       {/* What I do */}
       <Section variant="overlay" className="section--tight">
         <Container>
-          <div className="max-w-prose">
-            <h2 className="heading-section mb-lg">What I do</h2>
-            <div className="grid grid--2">
-              {[
-                { title: "Full-Stack Development", desc: "Angular, React, Next.js on the frontend. Java Spring Boot and Node.js on the backend. MySQL and PostgreSQL for data." },
-                { title: "Freelance Projects", desc: "Business websites, redesigns, and custom web apps which built for real results, not just aesthetics." },
-                { title: "Technical Content", desc: "I write about things I’m learning, building, and figuring out along the way." },
-                { title: "Problem Solving", desc: "I enjoy tracing root causes, unraveling messy systems, and making things work reliably." },
-              ].map(({ title, desc }) => (
-                <div key={title} className="info-card">
-                  <h3 className="label">{title}</h3>
-                  <p className="body-sm mt-sm">{desc}</p>
-                </div>
-              ))}
-            </div>
+          <h2 className="heading-section">What I do</h2>
+          <div className="grid grid--2 grid--gap-lg mt-lg">
+            {[
+              { title: "Full-Stack Development", desc: "I work across frontend and backend, building applications that are fast, reliable, and easy to maintain." },
+              { title: "Freelance Work", desc: "I help businesses build or improve their web presence, from simple websites to more custom applications." },
+              { title: "Technical Content", desc: "I write about things I’m learning, building, and figuring out along the way." },
+              { title: "Problem Solving", desc: "I enjoy digging into problems, understanding what’s actually going wrong, and making systems work better." },
+            ].map(({ title, desc }) => (
+              <div key={title} className="info-card">
+                <h3 className="heading-card" style={{ fontSize: "var(--font-base)" }}>{title}</h3>
+                <p className="body-sm mt-sm">{desc}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </Section>
@@ -94,7 +85,7 @@ export default function AboutPage() {
           <div className="max-w-prose">
             <h2 className="heading-section mb-lg">Background</h2>
             <p className="body-text">
-              I&apos;ve been working as a full-time developer for around {stats.experience} years now, building and shipping real-world applications across different domains.
+              I&apos;ve been working as a full-time developer for around {stats.experience} years, building and shipping applications across different domains.
             </p>
             <p className="body-text mt-md">
               Outside of that, I take on freelance projects, experiment with new tools, and build things on my own, including apps and open-source work.
@@ -112,7 +103,7 @@ export default function AboutPage() {
           <div className="max-w-prose">
             <h2 className="heading-section mb-md">I write about development too.</h2>
             <p className="body-text mb-xl">
-              Technical articles, tutorials, and dev concepts. If you&apos;re learning, there might be something useful in there.
+              Mostly things I&apos;m learning or building, shared as articles, notes, and small breakdowns that might help someone else along the way.
             </p>
             <div className="flex-wrap">
               <Button href="https://karthikshetty.hashnode.dev/" variant="ghost" external>Hashnode</Button>
