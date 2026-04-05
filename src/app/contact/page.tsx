@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Get in touch with Karthik Shetty — for freelance web development projects, collaborations, or just to say hello.",
 };
 
-const SOCIAL_LINKS = [  
+const SOCIAL_LINKS = [
   { label: "Twitter / X", href: "https://x.com/KarthikShettyyy", desc: "Follow my dev journey" },
   { label: "GitHub", href: "https://github.com/karthikshetty26", desc: "View my open source work" },
 ];
@@ -32,22 +32,20 @@ export default function ContactPage() {
           <div className="contact-grid">
             {/* Left: socials */}
             <div>
-              <div>
-                <p className="eyebrow">Elsewhere</p>
-                <ul role="list" style={{ display: "flex", flexDirection: "column", gap: "var(--space-md)" }}>
-                  {SOCIAL_LINKS.map(({ label, href, desc }) => (
-                    <li key={label}>
-                      <a href={href} target="_blank" rel="noopener noreferrer" className="social-link-card">
-                        <div>
-                          <p className="label">{label}</p>
-                          <p style={{ fontSize: "var(--font-xs)", color: "var(--foreground-muted)" }}>{desc}</p>
-                        </div>
-                        <span className="social-link-arrow">→</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p className="eyebrow">Elsewhere</p>
+              <ul role="list" style={{ display: "flex", flexDirection: "column", gap: "var(--space-md)" }}>
+                {SOCIAL_LINKS.map(({ label, href, desc }) => (
+                  <li key={label}>
+                    <a href={href} target="_blank" rel="noopener noreferrer" className="social-link-card">
+                      <div>
+                        <p className="label">{label}</p>
+                        <p style={{ fontSize: "var(--font-xs)", color: "var(--foreground-muted)" }}>{desc}</p>
+                      </div>
+                      <span className="social-link-arrow">→</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Right: contact */}
