@@ -17,9 +17,9 @@ export default function ServicesPage() {
         <Container>
           <div className="max-w-prose">
             <p className="eyebrow">Freelance Services</p>
-            <h1 className="heading-page">What I build for clients</h1>
+            <h1 className="heading-page">What I can help you build</h1>
             <p className="body-text mt-base">
-              I take on a limited number of freelance projects. Focused on quality over volume. If you have something specific in mind, let&apos;s talk.
+              I take on freelance projects alongside my full-time work, helping build clean and reliable experiences. If you have something in mind, feel free to reach out. Most of the time, simple done right works better than something overly complex.
             </p>
           </div>
         </Container>
@@ -53,10 +53,10 @@ export default function ServicesPage() {
 
           {/* CTA */}
           <div className="mt-4xl mb-2xl" style={{ textAlign: "center" }}>
-            <h2 className="heading-section">Ready to start a {" "}
-              <span className="text-green">project?</span></h2>
+            <h2 className="heading-section">Ready to start {" "}
+              <span className="text-green">something?</span></h2>
             <p className="body-text mt-md mb-xl">
-              Tell me what you&apos;re building and let&apos;s see if we&apos;re a good fit.
+              Tell me what you&apos;re working on and we can take it from there.
             </p>
             <Button href="/contact" size="lg">Start a Project</Button>
           </div>

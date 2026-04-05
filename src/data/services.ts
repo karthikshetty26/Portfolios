@@ -4,46 +4,43 @@ export const services: Service[] = [
     {
         title: "Business Website",
         description:
-            "A fast, professional, SEO-optimized website that establishes your brand online and converts visitors into leads. Built with a focus on performance and clarity.",
+            "A clean, fast website that represents your business properly.",
         includes: [
-            "Custom design aligned to your brand",
-            "Mobile-first, fully responsive layout",
-            "On-page SEO and meta configuration",
-            "Contact form with email integration",
+            "Custom design based on your brand",
+            "Fully responsive layout",
+            "Basic SEO setup",
             "Google Analytics setup",
             "Deployment to production hosting",
         ],
         bestFor:
-            "Startups, small businesses, and professionals who need a credible online presence fast.",
+            "Businesses, startups, or individuals who need a solid and reliable online presence.",
     },
     {
         title: "Website Redesign",
         description:
-            "Transform an outdated or underperforming website into a modern, clean experience that reflects where your business actually is today.",
+            "Improving an existing site that feels outdated, slow, or hard to use.",
         includes: [
-            "Full UX and design audit of existing site",
-            "Rebuilt frontend with modern stack",
-            "Performance optimization (Core Web Vitals)",
-            "Content structure improvements",
-            "Accessibility improvements",
-            "Migration with zero data loss",
+            "Review of current site",
+            "Updated UI and structure",
+            "Performance improvements",
+            "Cleaner content layout",
+            "Migration support",
         ],
         bestFor:
-            "Businesses with an existing site that looks dated, loads slowly, or doesn't convert well.",
+            "Businesses, startups, or individuals with an existing site that no longer reflects their current work.",
     },
     {
         title: "Custom Application",
         description:
-            "A purpose-built web app tailored to your specific workflow. Whether that's a dashboard, a booking system, an internal tool, or something more complex.",
+            "An application built around your specific workflow or idea.",
         includes: [
-            "Requirements analysis and architecture design",
-            "Full-stack development (frontend + backend + database)",
-            "Authentication and role-based access control",
-            "REST API design and integration",
-            "Admin panel or management interface",
+            "Feature planning and structure",
+            "Frontend and backend development",
+            "Database setup ",
+            "Authentication if needed",
             "Deployment and documentation",
         ],
         bestFor:
-            "Teams and founders who need a reliable, scalable web application built to solve a specific business problem.",
+            "Teams or individuals who need something more than a standard website.",
     },
 ];
