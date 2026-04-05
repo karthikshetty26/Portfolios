@@ -6,8 +6,8 @@ import { ServiceCard } from "@/components/ui/ServiceCard";
 import { services } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Services",
-  description: "Freelance web development services by Karthik Shetty — business websites, redesigns, and custom web applications.",
+  title: "Freelance Web Developer | Karthik Shetty",
+  description: "Freelance web developer building modern websites and web applications. Specializing in React, Next.js, and full-stack development for businesses and startups.",
 };
 
 export default function ServicesPage() {
