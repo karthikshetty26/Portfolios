@@ -527,9 +527,10 @@
 }
 
 .footer-copy {
-  font-size: var(--font-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--foreground-muted);
+  font-size: var(--font-xs);
+  font-weight: var(--font-weight-regular);
+  color: var(--foreground);
+  opacity: 0.5;
 }
 
 .footer-social {
