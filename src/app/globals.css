@@ -3,30 +3,30 @@
    ============================================================ */
 :root {
   /* Transitions */
-  --transition-fast:   0.15s ease-in-out;
+  --transition-fast: 0.15s ease-in-out;
   --transition-normal: 0.3s ease-in-out;
-  --transition-slow:   0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --theme-transition:  var(--transition-normal);
+  --transition-slow: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --theme-transition: var(--transition-normal);
 
   /* Base Colors */
-  --background:       #ffffff;
-  --foreground:       #1a1a1a;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
   --foreground-muted: #6b7280;
-  --foreground-05:    #3636368f;
-  --overlay:          #f4f4f5;
+  --foreground-05: #3636368f;
+  --overlay: #f4f4f5;
 
   /* Brand */
-  --cat-color:     #a4e84c;
+  --cat-color: #a4e84c;
   --brand-primary: var(--cat-color);
 
   /* Green Semantic */
-  --green-primary:      #0c7028;
-  --green-bg:           #eaf5ec;
+  --green-primary: #0c7028;
+  --green-bg: #eaf5ec;
   --green-highlight-bg: #0c7028;
 
   /* Borders */
-  --color-border:         rgba(0, 0, 0, 0.08);
-  --color-border-subtle:  rgba(0, 0, 0, 0.05);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-subtle: rgba(0, 0, 0, 0.05);
   --color-border-divider: rgba(0, 0, 0, 0.10);
 
   /* Shadows */
@@ -36,48 +36,48 @@
   --color-shadow-xl: rgba(0, 0, 0, 0.40);
 
   /* Surfaces */
-  --color-surface:          #ffffff;
+  --color-surface: #ffffff;
   --color-surface-elevated: #ffffff;
-  --color-glass-bg:         rgba(255, 255, 255, 0.80);
-  --color-button-text:      #ffffff;
+  --color-glass-bg: rgba(255, 255, 255, 0.80);
+  --color-button-text: #ffffff;
 
   /* Typography: Sizes */
-  --font-xs:    0.80rem;
-  --font-sm:    0.875rem;
-  --font-base:  1.00rem;
-  --font-md:    1.15rem;
-  --font-lg:    1.50rem;
-  --font-xl:    2.20rem;
-  --font-2xl:   2.80rem;
-  --font-3xl:   3.50rem;
-  --font-4xl:   4.50rem;
-  --font-hero:  10rem;
+  --font-xs: 0.80rem;
+  --font-sm: 0.875rem;
+  --font-base: 1.00rem;
+  --font-md: 1.15rem;
+  --font-lg: 1.50rem;
+  --font-xl: 2.20rem;
+  --font-2xl: 2.80rem;
+  --font-3xl: 3.50rem;
+  --font-4xl: 4.50rem;
+  --font-hero: 10rem;
   --font-2hero: 15rem;
 
   /* Typography: Weights */
-  --font-weight-regular:   400;
-  --font-weight-medium:    500;
-  --font-weight-semibold:  600;
-  --font-weight-bold:      700;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
   --font-weight-extrabold: 800;
-  --font-weight-black:     900;
+  --font-weight-black: 900;
 
   /* Spacing */
-  --space-xs:   0.375rem;
-  --space-sm:   0.500rem;
-  --space-md:   0.750rem;
+  --space-xs: 0.375rem;
+  --space-sm: 0.500rem;
+  --space-md: 0.750rem;
   --space-base: 1.000rem;
-  --space-lg:   1.250rem;
-  --space-xl:   1.500rem;
-  --space-2xl:  2.500rem;
-  --space-3xl:  5.000rem;
-  --space-4xl:  6.250rem;
+  --space-lg: 1.250rem;
+  --space-xl: 1.500rem;
+  --space-2xl: 2.500rem;
+  --space-3xl: 5.000rem;
+  --space-4xl: 6.250rem;
 
   /* Border Radius */
-  --radius-sm:   0.125rem;
-  --radius-md:   0.500rem;
-  --radius-lg:   0.750rem;
-  --radius-xl:   1.000rem;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.500rem;
+  --radius-lg: 0.750rem;
+  --radius-xl: 1.000rem;
   --radius-full: 9999px;
 }
 
@@ -85,17 +85,17 @@
    DARK THEME
    ============================================================ */
 [data-theme="dark"] {
-  --background:       #0a0a0a;
-  --foreground:       #e4e4e7;
+  --background: #0a0a0a;
+  --foreground: #e4e4e7;
   --foreground-muted: #71717a;
-  --foreground-05:    #C9C9C98F;
-  --overlay:          #111111;
+  --foreground-05: #C9C9C98F;
+  --overlay: #111111;
 
   --green-primary: var(--cat-color);
-  --green-bg:      rgba(12, 112, 40, 0.20);
+  --green-bg: rgba(12, 112, 40, 0.20);
 
-  --color-border:         rgba(255, 255, 255, 0.08);
-  --color-border-subtle:  rgba(255, 255, 255, 0.05);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
   --color-border-divider: rgba(255, 255, 255, 0.10);
 
   --color-shadow-sm: rgba(0, 0, 0, 0.20);
@@ -103,9 +103,9 @@
   --color-shadow-lg: rgba(0, 0, 0, 0.50);
   --color-shadow-xl: rgba(0, 0, 0, 0.60);
 
-  --color-surface:          #141414;
+  --color-surface: #141414;
   --color-surface-elevated: #1c1c1c;
-  --color-glass-bg:         rgba(10, 10, 10, 0.80);
+  --color-glass-bg: rgba(10, 10, 10, 0.80);
 }
 
 /* ============================================================
@@ -142,27 +142,29 @@ a {
   text-decoration: none;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
 /* ============================================================
-   THEME TRANSITION — scoped to avoid layout thrash
+   THEME TRANSITION — universal, simultaneous, no stagger
+   Every color-related property on every element transitions
+   together so the entire UI morphs in one unified motion.
    ============================================================ */
-:where(body, main, section, article, header, footer, nav, div, span,
-        p, h1, h2, h3, h4, h5, h6, small, strong, em, ul, ol, li,
-        a, button, input, textarea, select, svg, path) {
-  transition:
-    color var(--theme-transition),
-    background-color var(--theme-transition),
-    border-color var(--theme-transition),
-    box-shadow var(--theme-transition),
-    opacity var(--theme-transition);
+*,
+*::before,
+*::after {
+  transition-property: color, background-color, border-color,
+    outline-color, fill, stroke, box-shadow, opacity;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
 }
 
 /* ============================================================
@@ -180,13 +182,16 @@ ul, ol {
 ::-webkit-scrollbar {
   width: 4px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--overlay);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--foreground-05);
   border-radius: var(--radius-full);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--foreground);
 }

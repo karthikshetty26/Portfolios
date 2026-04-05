@@ -130,7 +130,6 @@
 
   /* Interaction */
   cursor: pointer;
-  transition: opacity var(--transition-fast), background-color var(--transition-fast);
 }
 
 .btn:hover {
@@ -207,7 +206,6 @@
   background-color: var(--color-surface);
 
   /* Interaction */
-  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
 /* Elevation on hover provides visual feedback for interactive cards */
@@ -281,7 +279,6 @@
   border-bottom: 1px solid transparent;
 
   /* Interaction */
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 /* Scrolled state adds visual separation from content */
@@ -337,7 +334,6 @@
   border-radius: var(--radius-full);
 
   /* Interaction */
-  transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .nav-link:hover {
@@ -372,7 +368,6 @@
 
   /* Interaction */
   cursor: pointer;
-  transition: background-color var(--transition-fast);
 }
 
 .nav-theme-toggle:hover {
@@ -398,7 +393,6 @@
   color: var(--background);
 
   /* Interaction */
-  transition: opacity var(--transition-fast);
 }
 
 .nav-cta:hover {
@@ -437,7 +431,7 @@
   width: 1.25rem;
   height: 1.5px;
   background-color: var(--foreground);
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  transition: transform var(--transition-fast);
   transform-origin: center;
 }
 
@@ -453,6 +447,7 @@
   opacity: 0;
   pointer-events: none;
   transform: translateY(-8px);
+  will-change: opacity, transform;
 }
 
 @media (min-width: 768px) {
@@ -487,7 +482,6 @@
   font-weight: var(--font-weight-semibold);
   border-bottom: 1px solid var(--color-border);
   color: var(--foreground-muted);
-  transition: color var(--transition-fast);
 }
 
 .mobile-menu-link--active {
@@ -505,7 +499,6 @@
   border-radius: var(--radius-full);
   background-color: var(--foreground);
   color: var(--background);
-  transition: opacity var(--transition-fast);
 }
 
 .mobile-menu-cta:hover {
@@ -548,7 +541,6 @@
 .footer-social a {
   color: var(--foreground);
   opacity: 0.5;
-  transition: opacity var(--transition-fast);
 }
 
 .footer-social a:hover {
@@ -559,7 +551,6 @@
   font-size: var(--font-xs);
   color: var(--foreground);
   opacity: 0.5;
-  transition: opacity var(--transition-fast);
 }
 
 .footer-top-link:hover {
@@ -645,7 +636,6 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background-color: var(--color-surface);
-  transition: opacity var(--transition-fast);
 }
 
 .social-link-card:hover {
@@ -656,6 +646,7 @@
   font-size: var(--font-sm);
   color: var(--foreground-muted);
   transition: transform var(--transition-fast);
+  will-change: transform;
 }
 
 .social-link-card:hover .social-link-arrow {
@@ -685,7 +676,6 @@
   font-size: var(--font-sm);
   font-family: inherit;
   outline: none;
-  transition: border-color var(--transition-fast);
 }
 
 .form-input:focus {
@@ -707,7 +697,6 @@
   font-size: var(--font-sm);
   font-weight: var(--font-weight-medium);
   color: var(--foreground);
-  transition: border-color var(--transition-fast);
 }
 
 .link-btn:hover {
@@ -725,7 +714,6 @@
 
 .breadcrumb-link {
   color: var(--foreground-muted);
-  transition: color var(--transition-fast);
 }
 
 .breadcrumb-link:hover {
@@ -950,7 +938,6 @@
   font-weight: var(--font-weight-semibold);
   color: var(--foreground-muted);
   opacity: 0.6;
-  transition: color var(--transition-fast), opacity var(--transition-fast);
 }
 
 .project-card:hover .text-cta {
