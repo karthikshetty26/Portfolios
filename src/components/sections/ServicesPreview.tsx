@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { Card } from "@/components/ui/Card";
+import { ServiceCard } from "@/components/ui/ServiceCard";
 import { services } from "@/data/services";
 
 export function ServicesPreview() {
@@ -19,14 +19,13 @@ export function ServicesPreview() {
         </div>
 
         <div className="grid grid--3">
-          {services.map((service) => (
-            <Card key={service.title}>
-              <h3 className="heading-card">{service.title}</h3>
-              <p className="body-sm mt-sm">{service.description}</p>
-              <p className="body-sm service-footer">
-                <strong className="label">Best for:</strong> {service.bestFor}
-              </p>
-            </Card>
+          {services.map((service, i) => (
+            <ServiceCard
+              key={service.title}
+              service={service}
+              index={i}
+              bestForVersion="V2"
+            />
           ))}
         </div>
       </Container>

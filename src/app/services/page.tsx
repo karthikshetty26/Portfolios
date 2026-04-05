@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { ServiceCard } from "@/components/ui/ServiceCard";
 import { services } from "@/data/services";
 
 export const metadata: Metadata = {
@@ -40,33 +40,14 @@ export default function ServicesPage() {
         <Container>
           <div className="grid grid--3">
             {services.map((service, i) => (
-              <Card key={service.title} className="service-card">
-                <span className="service-number">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-
-                <div>
-                  <h2 className="heading-card" style={{ fontSize: "var(--font-lg)" }}>{service.title}</h2>
-                  <p className="body-sm mt-sm">{service.description}</p>
-                </div>
-
-                <div style={{ flex: 1 }}>
-                  <p className="eyebrow" style={{ fontSize: "var(--font-xs)" }}>Includes</p>
-                  <ul className="includes-list" role="list">
-                    {service.includes.map((item) => (
-                      <li key={item} className="includes-list-item">
-                        <span className="includes-list-check" aria-hidden="true">✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="service-best-for">
-                  <p className="eyebrow" style={{ marginBottom: "var(--space-xs)", fontSize: "var(--font-xs)" }}>Best for</p>
-                  <p style={{ fontSize: "var(--font-xs)", color: "var(--foreground)" }}>{service.bestFor}</p>
-                </div>
-              </Card>
+              <ServiceCard
+                key={service.title}
+                service={service}
+                index={i}
+                showIncludes={true}
+                headingLevel="h2"
+                bestForVersion="V1"
+              />
             ))}
           </div>
 
