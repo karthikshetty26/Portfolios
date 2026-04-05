@@ -305,6 +305,12 @@
   color: var(--foreground);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
 /* Desktop navigation - hidden on mobile */
 .nav-links {
   display: none;

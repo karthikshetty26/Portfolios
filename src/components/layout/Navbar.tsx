@@ -69,7 +69,7 @@ export function Navbar() {
     setIsDark(next);
     const theme = next ? "dark" : "light";
     document.documentElement.setAttribute("data-theme", theme);
-    try { localStorage.setItem("theme", theme); } catch (_) {}
+    try { localStorage.setItem("theme", theme); } catch (_) { }
   }, [isDark]);
 
   return (
@@ -84,60 +84,58 @@ export function Navbar() {
               Karthik Shetty
             </Link>
 
-            <ul className="nav-links" role="list">
-              {NAV_LINKS.map(({ label, href }) => {
-                const isActive = pathname === href;
-                return (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      className={`nav-link${isActive ? " nav-link--active" : ""}`}
-                      aria-current={isActive ? "page" : undefined}
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+            <div className="nav-right">
+              <ul className="nav-links" role="list">
+                {NAV_LINKS.map(({ label, href }) => {
+                  const isActive = pathname === href;
+                  return (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className={`nav-link${isActive ? " nav-link--active" : ""}`}
+                        aria-current={isActive ? "page" : undefined}
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
 
-            <div className="nav-controls">
-              <button
-                onClick={toggleTheme}
-                aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-                className="nav-theme-toggle"
-              >
-                {isDark ? <SunIcon /> : <MoonIcon />}
-              </button>
+              <div className="nav-controls">
+                <button
+                  onClick={toggleTheme}
+                  aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                  className="nav-theme-toggle"
+                >
+                  {isDark ? <SunIcon /> : <MoonIcon />}
+                </button>
 
-              <Link href="/contact" className="nav-cta">
-                Work With Me
-              </Link>
-
-              <button
-                onClick={() => setMenuOpen((o) => !o)}
-                aria-label={menuOpen ? "Close menu" : "Open menu"}
-                aria-expanded={menuOpen}
-                aria-controls="mobile-menu"
-                className="hamburger"
-              >
-                <span
-                  className="hamburger-line"
-                  style={{
-                    transform: menuOpen ? "translateY(6.5px) rotate(45deg)" : "none",
-                  }}
-                />
-                <span
-                  className="hamburger-line"
-                  style={{ opacity: menuOpen ? 0 : 1 }}
-                />
-                <span
-                  className="hamburger-line"
-                  style={{
-                    transform: menuOpen ? "translateY(-6.5px) rotate(-45deg)" : "none",
-                  }}
-                />
-              </button>
+                <button
+                  onClick={() => setMenuOpen((o) => !o)}
+                  aria-label={menuOpen ? "Close menu" : "Open menu"}
+                  aria-expanded={menuOpen}
+                  aria-controls="mobile-menu"
+                  className="hamburger"
+                >
+                  <span
+                    className="hamburger-line"
+                    style={{
+                      transform: menuOpen ? "translateY(6.5px) rotate(45deg)" : "none",
+                    }}
+                  />
+                  <span
+                    className="hamburger-line"
+                    style={{ opacity: menuOpen ? 0 : 1 }}
+                  />
+                  <span
+                    className="hamburger-line"
+                    style={{
+                      transform: menuOpen ? "translateY(-6.5px) rotate(-45deg)" : "none",
+                    }}
+                  />
+                </button>
+              </div>
             </div>
           </nav>
         </Container>
@@ -165,13 +163,6 @@ export function Navbar() {
               </Link>
             );
           })}
-          <Link
-            href="/contact"
-            className="mobile-menu-cta"
-            onClick={() => setMenuOpen(false)}
-          >
-            Work With Me
-          </Link>
         </nav>
       </div>
     </>
