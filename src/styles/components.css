@@ -119,7 +119,7 @@
 
   /* Visual styling */
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
 
   /* Interaction */
   cursor: pointer;
@@ -321,7 +321,7 @@
   color: var(--foreground-muted);
 
   /* Visual styling */
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
 
   /* Interaction */
   transition: color var(--transition-fast), background-color var(--transition-fast);
@@ -353,7 +353,7 @@
 
   /* Visual styling */
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   background: transparent;
   color: var(--foreground-muted);
 
@@ -380,7 +380,7 @@
   font-weight: var(--font-weight-semibold);
 
   /* Visual styling */
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   background-color: var(--foreground);
   color: var(--background);
 
@@ -410,7 +410,7 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
 }
 
 @media (min-width: 768px) {
@@ -489,7 +489,7 @@
   padding: var(--space-md) 0;
   font-size: var(--font-base);
   font-weight: var(--font-weight-semibold);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   background-color: var(--foreground);
   color: var(--background);
   transition: opacity var(--transition-fast);
@@ -628,7 +628,7 @@
   justify-content: space-between;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   background-color: var(--color-surface);
   transition: opacity var(--transition-fast);
 }
@@ -664,7 +664,7 @@
   width: 100%;
   padding: var(--space-sm) var(--space-md);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   background-color: var(--color-surface);
   color: var(--foreground);
   font-size: var(--font-sm);
@@ -688,7 +688,7 @@
   gap: var(--space-sm);
   padding: var(--space-sm) var(--space-base);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   font-size: var(--font-sm);
   font-weight: var(--font-weight-medium);
   color: var(--foreground);
