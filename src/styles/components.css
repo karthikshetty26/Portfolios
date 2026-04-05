@@ -503,7 +503,7 @@
 /* --- Footer --- */
 .footer {
   border-top: 1px solid var(--color-border);
-  padding: var(--space-3xl) 0;
+  padding: var(--space-2xl) 0;
 }
 
 .footer-inner {

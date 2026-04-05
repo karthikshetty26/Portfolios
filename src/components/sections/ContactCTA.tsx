@@ -6,7 +6,7 @@ export function ContactCTA() {
   return (
     <Section>
       <Container>
-        <div className="cta-box">
+        <div className="mt-2xl mb-2xl" style={{ textAlign: "center" }}>
           <p className="eyebrow">Let&apos;s work together</p>
           <h2 className="heading-section">
             Have a project in mind?{" "}

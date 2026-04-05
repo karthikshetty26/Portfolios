@@ -52,9 +52,10 @@ export default function ServicesPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-3xl" style={{ textAlign: "center" }}>
-            <h2 className="heading-section">Ready to start a project?</h2>
-            <p className="body-sm mt-md mb-xl">
+          <div className="mt-4xl mb-2xl" style={{ textAlign: "center" }}>
+            <h2 className="heading-section">Ready to start a {" "}
+              <span className="text-green">project?</span></h2>
+            <p className="body-text mt-md mb-xl">
               Tell me what you&apos;re building and let&apos;s see if we&apos;re a good fit.
             </p>
             <Button href="/contact" size="lg">Start a Project</Button>
