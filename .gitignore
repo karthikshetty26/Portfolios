@@ -42,3 +42,9 @@ next-env.d.ts
 
 # vs code
 .vscode
+
+# Kiro
+.kiro
+
+# Ignore test files
+*.test.tsx
