@@ -35,14 +35,16 @@ export function ProjectCard({
             <h3 className="heading-card mb-sm">{project.title}</h3>
 
             {/* Project description */}
-            <p className="body-xs text-muted line-clamp-3 mb-base flex-grow">
-                {project.description}
-            </p>
+            <div className="project-card-description-wrapper mb-base flex-grow">
+                <p className="body-xs text-muted project-card-description">
+                    {project.description}
+                </p>
+            </div>
 
             {/* Outcome highlight and CTA */}
             <div className="project-card-footer">
-                <p className="text-green text-sm mb-sm">
-                    {project.outcome.split(".")[0]}.
+                <p className="text-green text-sm mb-sm project-card-outcome">
+                    {project.outcome}
                 </p>
                 <span className="text-cta">View case study →</span>
             </div>

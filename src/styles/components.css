@@ -860,6 +860,14 @@
   overflow: hidden;
 }
 
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .line-clamp-1 {
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -889,6 +897,7 @@
   flex-direction: column;
   gap: 0;
   padding: var(--space-2xl);
+  height: 100%;
 }
 
 /* Technology tags - above title with proper spacing */
@@ -910,9 +919,48 @@
   line-height: 1.6;
 }
 
+/* Description: mobile = 3 lines, desktop = 2 lines */
+.project-card .project-card-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .project-card .project-card-description {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+}
+
+/* Outcome: mobile = 2 lines, desktop = 1 line */
+.project-card-footer .project-card-outcome {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Ensures description grows to fill space, pushing footer down */
 .project-card .flex-grow {
   flex-grow: 1;
+}
+
+/* Description wrapper: flex-grow lives here, isolated from -webkit-box */
+.project-card-description-wrapper {
+  flex-grow: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Stretch card link wrapper to fill grid cell height */
+.card-link-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Footer section - outcome and CTA */
