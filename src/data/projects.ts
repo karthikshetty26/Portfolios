@@ -189,7 +189,9 @@ export const projects: Project[] = [
         slug: "rentall",
         title: "RentAll: Equipment Rental Platform",
         projectType: 'work',
-        cat: [],
+        cat: [
+            { name: 'Know More', url: 'https://myrentalgoods.com/' }
+        ],
         year: "Dec 2023 - Dec 2024",
         tech: ["Angular 17", "TypeScript", "Java", "Spring Boot", "MySQL", "Bootstrap", "HTML5", "CSS3"],
 

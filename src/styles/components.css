@@ -754,6 +754,29 @@
   color: var(--green-primary);
 }
 
+/* --- Project detail metadata row --- */
+.project-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  font-size: var(--font-sm);
+  color: var(--foreground-muted);
+}
+
+.project-meta-link {
+  color: var(--foreground-muted);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.project-meta-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* --- Divider --- */
 .divider {
   border: none;
@@ -785,13 +808,12 @@
 .content-space {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3xl);
+  gap: var(--space-2xl);
 }
 
 /* --- Project detail outcome box --- */
 .outcome-box {
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
   background-color: var(--green-bg);
   padding: var(--space-2xl);
 }

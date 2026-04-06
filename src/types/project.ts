@@ -11,4 +11,10 @@ export type Project = {
     outcome: string;
     tech: string[];
     featured: boolean;
+    // New optional fields
+    overview?: string;
+    highlights?: string[];       // max 4 rendered
+    challenges?: string;
+    solutionPoints?: string[];
+    images?: string[];           // paths relative to /public
 };
