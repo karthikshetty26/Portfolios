@@ -197,7 +197,7 @@
   flex-direction: column;
 
   /* Spacing */
-  padding: var(--space-2xl);
+  padding: var(--space-lg);
 
   /* Visual styling */
   border-radius: var(--radius-lg);
@@ -205,6 +205,13 @@
   background-color: var(--color-surface);
 
   /* Interaction */
+}
+
+
+@media (min-width: 768px) {
+  .card {
+    padding: var(--space-2xl);
+  }
 }
 
 /* Elevation on hover provides visual feedback for interactive cards */
@@ -918,8 +925,14 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding: var(--space-2xl);
+  padding: var(--space-lg);
   height: 100%;
+}
+
+@media (min-width: 768px) {
+  .project-card {
+    padding: var(--space-2xl);
+  }
 }
 
 /* Technology tags - above title with proper spacing */

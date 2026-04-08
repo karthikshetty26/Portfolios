@@ -30,13 +30,21 @@ export default function BlogsPage() {
           <div>
             <div className="grid grid--2">
               {blogs.map((blog) => (
-                <Card key={blog.slug}>
-                  <time dateTime={blog.date} className="text-muted" style={{ fontSize: "var(--font-xs)", fontWeight: "var(--font-weight-medium)" }}>
-                    {formatDate(blog.date)}
-                  </time>
-                  <h2 className="heading-card mt-sm">{blog.title}</h2>
-                  <p className="body-sm mt-sm">{blog.description}</p>
-                </Card>
+                <a
+                  key={blog.slug}
+                  href={blog.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", color: "inherit", display: "contents" }}
+                >
+                  <Card>
+                    <time dateTime={blog.date} className="text-muted" style={{ fontSize: "var(--font-xs)", fontWeight: "var(--font-weight-medium)" }}>
+                      {blog.date_formatted} | {blog.platform}
+                    </time>
+                    <h2 className="heading-card mt-sm">{blog.title}</h2>
+                    <p className="body-sm mt-sm">{blog.description}</p>
+                  </Card>
+                </a>
               ))}
             </div>
 
