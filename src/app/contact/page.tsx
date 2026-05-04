@@ -78,7 +78,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="mailto:karthikkanyana26@gmail.com"
+                  href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
                   className="btn btn--text-left btn--ghost btn--lg"
                 >
                   Send an Email

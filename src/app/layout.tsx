@@ -7,8 +7,8 @@ import "./globals.css";
 import "@/styles/layout.css";
 import "@/styles/components.css";
 
-const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID || "G-9J1RVTSWHQ";
-const GOOGLE_SITE_VERIFICATION = "cCP8Kw8vPOGAi55eKNzp5ob1QtdHelpWTMyJPSkRCgU";
+const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID || "";
+const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
