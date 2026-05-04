@@ -1,6 +1,6 @@
 {
-  "name": "portfolio-2025",
-  "version": "0.1.0",
+  "name": "portfolio",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -9,17 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^15.5.14",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "next": "16.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.0",
     "@types/node": "^25.5.0",
-    "@types/react": "^19.2.14",
+    "@types/react": "19.2.14",
     "eslint": "^9.0.0",
-    "eslint-config-next": "^15.5.14",
+    "eslint-config-next": "16.2.4",
     "postcss": "^8.5.8",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "@types/react": "19.2.14"
   }
 }
